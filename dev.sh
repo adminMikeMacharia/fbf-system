@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 set -e
 
-export NODE_OPTIONS="--max-http-header-size=65536"
+export VITE_API_BASE="${VITE_API_BASE:-https://macharia-os-main.replit.app}"
 
-echo "[fbf] Starting all 7 FBF services..."
+echo "[fbf] Starting all services..."
 
-PORT=3001 pnpm --filter @workspace/api-server run dev &
-PORT=5000 BASE_PATH=/ pnpm --filter @workspace/founders-brand-hub run dev &
-PORT=3002 BASE_PATH=/ pnpm --filter @workspace/founders-kitchen run dev &
-PORT=3003 BASE_PATH=/ pnpm --filter @workspace/founders-gaming run dev &
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/fvc run dev &
-PORT=6000 BASE_PATH=/ pnpm --filter @workspace/sponsorship-hub run dev &
-PORT=8000 BASE_PATH=/ pnpm --filter @workspace/chapters-ledgers run dev &
+PORT=3001 node_modules/.bin/tsx artifacts/api-server/src/index.ts &
+
+BASE_PATH=/founders-brand-hub/ PORT=5000 pnpm --filter @workspace/founders-brand-hub run dev &
+BASE_PATH=/founders-kitchen/ PORT=3002 pnpm --filter @workspace/founders-kitchen run dev &
+BASE_PATH=/founders-gaming/ PORT=3003 pnpm --filter @workspace/founders-gaming run dev &
+BASE_PATH=/fvc/ PORT=5173 pnpm --filter @workspace/fvc run dev &
+BASE_PATH=/sponsorship-hub/ PORT=6000 pnpm --filter @workspace/sponsorship-hub run dev &
+BASE_PATH=/chapters-ledgers/ PORT=8000 pnpm --filter @workspace/chapters-ledgers run dev &
 
 wait

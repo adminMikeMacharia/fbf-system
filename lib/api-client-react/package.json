@@ -4,7 +4,5 @@
   "private": true,
   "type": "module",
   "main": "index.ts",
-  "exports": {
-    ".": "./index.ts"
-  }
+  "types": "index.ts"
 }

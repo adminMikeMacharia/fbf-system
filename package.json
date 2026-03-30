@@ -1,21 +1,19 @@
 {
   "name": "fbf-system",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev:brand-hub": "pnpm --filter @workspace/founders-brand-hub run dev",
-    "dev:kitchen": "pnpm --filter @workspace/founders-kitchen run dev",
-    "dev:gaming": "pnpm --filter @workspace/founders-gaming run dev",
-    "dev:fvc": "pnpm --filter @workspace/fvc run dev",
+    "dev:kitchen":   "pnpm --filter @workspace/founders-kitchen run dev",
+    "dev:gaming":    "pnpm --filter @workspace/founders-gaming run dev",
+    "dev:fvc":       "pnpm --filter @workspace/fvc run dev",
     "dev:sponsorship": "pnpm --filter @workspace/sponsorship-hub run dev",
-    "dev:chapters": "pnpm --filter @workspace/chapters-ledgers run dev"
-  },
-  "engines": {
-    "node": ">=20"
+    "dev:chapters":  "pnpm --filter @workspace/chapters-ledgers run dev"
   },
   "dependencies": {
-    "cors": "^2.8.5",
     "express": "^5.1.0",
-    "http-proxy-middleware": "^3.0.5",
+    "cors": "^2.8.5",
     "tsx": "^4.19.0"
-  }
+  },
+  "engines": { "node": ">=20" }
 }

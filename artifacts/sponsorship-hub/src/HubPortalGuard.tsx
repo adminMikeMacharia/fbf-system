@@ -22,10 +22,10 @@ export default function HubPortalGuard({ slug, portalName, children }: Props) {
       return;
     }
 
-    const apiBase = (import.meta.env.VITE_API_BASE as string | undefined)
+    const _apiBase = (import.meta.env.VITE_API_BASE as string | undefined)
       ? `${(import.meta.env.VITE_API_BASE as string).replace(/\/$/, "")}/api`
       : "/api";
-    fetch(`${apiBase}/hub/portal-verify?slug=${encodeURIComponent(slug)}`, {
+    fetch(`${_apiBase}/hub/portal-verify?slug=${encodeURIComponent(slug)}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(async (r) => {

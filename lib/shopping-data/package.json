@@ -1,10 +1,8 @@
 {
-  "name": "@workspace/kola-data",
+  "name": "@workspace/shopping-data",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "main": "index.ts",
-  "exports": {
-    ".": "./index.ts"
-  }
+  "types": "index.ts"
 }
