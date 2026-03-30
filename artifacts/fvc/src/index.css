@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-accent: 'Bebas Neue', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #003153;
+    color: white;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .font-accent {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .font-label {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+  }
+}

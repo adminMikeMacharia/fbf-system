@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/chapters-ledgers/"
+title = "Chapters & Ledgers"
+version = "1.0.0"
+id = "artifacts/chapters-ledgers"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 8081
+name = "web"
+paths = ["/chapters-ledgers/"]
+
+[services.development]
+run = "pnpm --filter @workspace/chapters-ledgers run dev"
+
+[services.env]
+PORT = "8081"
+BASE_PATH = "/chapters-ledgers/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/chapters-ledgers", "run", "build"]
+publicDir = "artifacts/chapters-ledgers/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

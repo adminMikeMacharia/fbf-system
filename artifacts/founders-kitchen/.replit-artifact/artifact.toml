@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/founders-kitchen/"
+title = "Founders Kitchen"
+version = "1.0.0"
+id = "artifacts/founders-kitchen"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 18691
+name = "web"
+paths = ["/founders-kitchen/"]
+
+[services.development]
+run = "pnpm --filter @workspace/founders-kitchen run dev"
+
+[services.env]
+PORT = "18691"
+BASE_PATH = "/founders-kitchen/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/founders-kitchen", "run", "build"]
+publicDir = "artifacts/founders-kitchen/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

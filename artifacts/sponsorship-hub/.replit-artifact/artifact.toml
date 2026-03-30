@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/sponsorship-hub/"
+title = "FBF Sponsorship Hub"
+version = "1.0.0"
+id = "artifacts/sponsorship-hub"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 21050
+name = "web"
+paths = ["/sponsorship-hub/"]
+
+[services.development]
+run = "pnpm --filter @workspace/sponsorship-hub run dev"
+
+[services.env]
+PORT = "21050"
+BASE_PATH = "/sponsorship-hub/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/sponsorship-hub", "run", "build"]
+publicDir = "artifacts/sponsorship-hub/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

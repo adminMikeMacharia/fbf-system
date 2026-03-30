@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  /* FBF Primary Brand Colours */
+  --color-fbf-red: #F40009;
+  --color-fbf-red-alt: #DC143C;
+  --color-fbf-navy: #003153;
+  --color-fbf-navy-muted: #00315320;
+
+  /* FBF Secondary Palette */
+  --color-fbf-crimson: #DC143C;
+  --color-fbf-dark-spring: #177245;
+  --color-fbf-turquoise: #00827F;
+  --color-fbf-saffron: #F4C430;
+  --color-fbf-baby-yellow: #FEFACD;
+  --color-fbf-duke-blue: #00009C;
+  --color-fbf-persian-blue: #1C39BB;
+  --color-fbf-azure: #007FFF;
+  --color-fbf-pear: #D1E231;
+  --color-fbf-cherry-blossom: #FFB7C5;
+
+  /* FBF Gradient tokens */
+  --color-fbf-ocean-from: #003153;
+  --color-fbf-ocean-to: #007FFF;
+  --color-fbf-aurora-from: #003153;
+  --color-fbf-aurora-to: #177245;
+  --color-fbf-blush-from: #F40009;
+  --color-fbf-blush-to: #FFB7C5;
+  --color-fbf-celestial-from: #1C39BB;
+  --color-fbf-celestial-to: #00827F;
+
+  /* ARC colour system — preserved for episode/content cards */
+  --color-arc1: #F40009;
+  --color-arc1-muted: #F4000915;
+  --color-arc2: #F4C430;
+  --color-arc2-muted: #F4C43015;
+  --color-arc3: #177245;
+  --color-arc3-muted: #17724515;
+  --color-arc4: #007FFF;
+  --color-arc4-muted: #007FFF15;
+  --color-arc5: #8A5ABF;
+  --color-arc5-muted: #8A5ABF15;
+  --color-arc6: #00827F;
+  --color-arc6-muted: #00827F15;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-accent: 'Bebas Neue', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 0 0% 98%;
+  --foreground: 214 40% 12%;
+
+  --border: 214 20% 88%;
+  --input: 214 20% 88%;
+  --ring: 358 97% 49%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 214 40% 12%;
+  --card-border: 214 20% 92%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 214 40% 12%;
+
+  /* Primary = FBF Red */
+  --primary: 358 97% 49%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary = Prussian Blue */
+  --secondary: 213 100% 16%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 214 15% 93%;
+  --muted-foreground: 214 10% 45%;
+
+  --accent: 358 97% 49%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: hsl(var(--foreground));
+  }
+
+  h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .glass-nav {
+    background-color: #003153;
+    border-bottom: 2px solid #F40009;
+    box-shadow: 0 2px 16px rgba(0,49,83,0.18);
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .fbf-gradient-ocean {
+    background: linear-gradient(135deg, #003153 0%, #007FFF 100%);
+  }
+  .fbf-gradient-aurora {
+    background: linear-gradient(135deg, #003153 0%, #177245 100%);
+  }
+  .fbf-gradient-blush {
+    background: linear-gradient(135deg, #F40009 0%, #FFB7C5 100%);
+  }
+  .fbf-gradient-celestial {
+    background: linear-gradient(135deg, #1C39BB 0%, #00827F 100%);
+  }
+  .font-display {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .font-accent {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .font-label {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+  }
+}

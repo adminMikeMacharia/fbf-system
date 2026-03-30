@@ -1,0 +1,25 @@
+{
+  "name": "Founders Kitchen",
+  "short_name": "FK",
+  "description": "Founders Kitchen — where ideas become ventures.",
+  "start_url": "/founders-kitchen/",
+  "scope": "/founders-kitchen/",
+  "display": "standalone",
+  "background_color": "#faf9f7",
+  "theme_color": "#E8394A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/founders-kitchen/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/founders-kitchen/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

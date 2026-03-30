@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/founders-gaming/"
+title = "Founders Gaming"
+version = "1.0.0"
+id = "artifacts/founders-gaming"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 18701
+name = "web"
+paths = ["/founders-gaming/"]
+
+[services.development]
+run = "pnpm --filter @workspace/founders-gaming run dev"
+
+[services.env]
+PORT = "18701"
+BASE_PATH = "/founders-gaming/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/founders-gaming", "run", "build"]
+publicDir = "artifacts/founders-gaming/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

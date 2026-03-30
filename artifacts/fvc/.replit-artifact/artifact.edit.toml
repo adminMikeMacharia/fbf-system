@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/fvc/"
+title = "Founders Venture Capital"
+version = "1.0.0"
+id = "artifacts/fvc"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 18750
+name = "web"
+paths = ["/fvc/"]
+
+[services.development]
+run = "pnpm --filter @workspace/fvc run dev"
+
+[services.env]
+PORT = "18750"
+BASE_PATH = "/fvc/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/fvc", "run", "build"]
+publicDir = "artifacts/fvc/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

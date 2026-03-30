@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-label: 'Poppins', sans-serif;
+  --font-hero: 'Bebas Neue', sans-serif;
+
+  --color-fbf-red: #D32F2F;
+  --color-fbf-navy: #003153;
+  --color-fbf-crimson: #B71C1C;
+  --color-fbf-turquoise: #00897B;
+  --color-fbf-saffron: #F9A825;
+  --color-fbf-duke-blue: #00248C;
+  --color-fbf-persian-blue: #1C39BB;
+  --color-fbf-azure: #0078D4;
+  --color-fbf-pear-green: #7EC850;
+  --color-fbf-cherry: #FFB7C5;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 210 40% 98%;
+  --foreground: 213 31% 10%;
+
+  --border: 214 32% 85%;
+  --input: 214 32% 85%;
+  --ring: 213 31% 20%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 213 31% 10%;
+
+  --primary: 210 100% 17%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 94%;
+  --secondary-foreground: 213 31% 20%;
+
+  --muted: 210 40% 93%;
+  --muted-foreground: 215 16% 47%;
+
+  --accent: 0 68% 50%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  .font-label {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-hero {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-ocean {
+    background: linear-gradient(135deg, #003153 0%, #0078D4 50%, #00897B 100%);
+  }
+  .gradient-aurora {
+    background: linear-gradient(135deg, #1C39BB 0%, #7EC850 50%, #00897B 100%);
+  }
+  .gradient-blush {
+    background: linear-gradient(135deg, #D32F2F 0%, #FFB7C5 50%, #F9A825 100%);
+  }
+  .gradient-celestial {
+    background: linear-gradient(135deg, #00248C 0%, #1C39BB 50%, #0078D4 100%);
+  }
+
+  .nav-active {
+    @apply bg-fbf-red text-white;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
