@@ -71,6 +71,6 @@ externalPort = 8000
 channel = "stable-25_05"
 
 [deployment]
-deploymentTarget = "autoscale"
-run = ["node_modules/.bin/tsx", "server.mjs"]
-build = ["bash", "build.sh"]
+deploymentTarget = "cloudrun"
+run = ["sh", "-c", "node_modules/.bin/tsx server.mjs"]
+build = ["sh", "-c", "bash build.sh"]
