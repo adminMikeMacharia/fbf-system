@@ -26,10 +26,17 @@ const portals = [
 for (const portal of portals) {
   const distDir = path.join(__dirname, "artifacts", portal, "dist", "public");
   app.use(`/${portal}`, express.static(distDir));
-  app.get(`/${portal}/*`, (_req, res) => {
-    res.sendFile(path.join(distDir, "index.html"));
-  });
 }
+
+app.use((req, res, next) => {
+  const match = req.path.match(/^\/(founders-brand-hub|founders-kitchen|founders-gaming|fvc|sponsorship-hub|chapters-ledgers)(\/.*)?$/);
+  if (match) {
+    const portal = match[1];
+    const distDir = path.join(__dirname, "artifacts", portal, "dist", "public");
+    return res.sendFile(path.join(distDir, "index.html"));
+  }
+  next();
+});
 
 app.get("/", (_req, res) => {
   const links = portals.map(p => `<li><a href="/${p}/">${p}</a></li>`).join("\n");

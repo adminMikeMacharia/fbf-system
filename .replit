@@ -72,5 +72,5 @@ channel = "stable-25_05"
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["npx", "tsx", "server.mjs"]
+run = ["node_modules/.bin/tsx", "server.mjs"]
 build = ["bash", "build.sh"]
