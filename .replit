@@ -71,6 +71,7 @@ externalPort = 8000
 channel = "stable-25_05"
 
 [deployment]
-deploymentTarget = "autoscale"
+deploymentTarget = "static"
 run = ["bash", "start.sh"]
 build = ["bash", "build.sh"]
+publicDir = "artifacts"
