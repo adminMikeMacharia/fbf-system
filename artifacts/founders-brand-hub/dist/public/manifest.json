@@ -1,0 +1,14 @@
+{
+  "name": "Founders Brand Hub",
+  "short_name": "Brand Hub",
+  "description": "FBF Brand Intelligence Hub — The central brand reference for the Founders Battlefield ecosystem.",
+  "start_url": "/founders-brand/",
+  "scope": "/founders-brand/",
+  "display": "standalone",
+  "background_color": "#003153",
+  "theme_color": "#003153",
+  "icons": [
+    { "src": "/founders-brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/founders-brand/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
