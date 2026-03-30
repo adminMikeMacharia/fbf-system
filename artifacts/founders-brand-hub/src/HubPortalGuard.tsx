@@ -8,7 +8,7 @@ interface Props {
 
 type State = "loading" | "authorized" | "unauthorized" | "error";
 
-const HUB_URL = "/hub/";
+const HUB_URL = "https://macharia-os-main.replit.app/hub/";
 
 export default function HubPortalGuard({ slug, portalName, children }: Props) {
   const [state, setState] = useState<State>("loading");
