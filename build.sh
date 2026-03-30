@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+export VITE_API_BASE="${VITE_API_BASE:-https://macharia-os-main.replit.app}"
+
 echo "[fbf] Building all portals for production..."
+echo "[fbf] VITE_API_BASE=$VITE_API_BASE"
 
 PORT=19200 BASE_PATH=/founders-brand-hub/ pnpm --filter @workspace/founders-brand-hub run build &
 PORT=19201 BASE_PATH=/founders-kitchen/ pnpm --filter @workspace/founders-kitchen run build &
