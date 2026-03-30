@@ -22,6 +22,7 @@ catalog:
   tailwind-merge: 3.5.0
   tailwindcss: ^4.1.14
   vite: ^7.3.0
+  tsx: ^4.19.0
   zod: ^3.25.76
 
 onlyBuiltDependencies:
