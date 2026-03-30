@@ -704,6 +704,8 @@ importers:
         specifier: 'catalog:'
         version: 3.25.76
 
+  lib/api-client-react: {}
+
 packages:
 
   '@babel/code-frame@7.29.0':
