@@ -7,19 +7,9 @@
   "display": "standalone",
   "background_color": "#faf9f7",
   "theme_color": "#E8394A",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "icons": [
-    {
-      "src": "/founders-kitchen/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/founders-kitchen/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    { "src": "/founders-kitchen/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/founders-kitchen/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }

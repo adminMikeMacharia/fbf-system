@@ -6,8 +6,13 @@
     <title>Founders Brand Hub</title>
     <meta name="description" content="FBF Brand Intelligence Hub — The central brand reference for the Founders Battlefield ecosystem." />
     <meta name="theme-color" content="#003153" />
-    <link rel="icon" type="image/svg+xml" href="/founders-brand/favicon.svg" />
-    <link rel="manifest" href="/founders-brand/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Brand Hub" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/founders-brand-hub/icon-192.png" />
+    <link rel="apple-touch-icon" href="/founders-brand-hub/icon-192.png" />
+    <link rel="manifest" href="/founders-brand-hub/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -18,7 +23,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/founders-brand/sw.js', { scope: '/founders-brand/' }).catch(() => {});
+          navigator.serviceWorker.register('/founders-brand-hub/sw.js', { scope: '/founders-brand-hub/' }).catch(() => {});
         });
       }
     </script>

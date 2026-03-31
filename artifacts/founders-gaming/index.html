@@ -1,19 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Founders Gaming | Founders Battlefield</title>
     <meta name="description" content="Founders Gaming — Where founder development meets the arena. Explore gamified pitch battles, XP systems, and the future of entrepreneurial play." />
     <meta property="og:title" content="Founders Gaming | Founders Battlefield" />
     <meta property="og:description" content="The intersection of gaming, gamification, and founder development. Pitch battles. Leaderboards. Season rankings." />
-    <title>Founders Gaming | Founders Battlefield</title>
     <meta name="theme-color" content="#7c3aed" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="FG" />
+    <link rel="icon" type="image/svg+xml" href="/founders-gaming/favicon.svg" />
+    <link rel="apple-touch-icon" href="/founders-gaming/icon-192.png" />
     <link rel="manifest" href="/founders-gaming/manifest.json" />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
