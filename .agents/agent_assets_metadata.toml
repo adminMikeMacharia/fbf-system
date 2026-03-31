@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "5t4faRCCBCcjPjQMaVfHs"
@@ -36,3 +35,9 @@ id = "zJ5612A9k-7m7I7wBZPP-"
 uri = "file://artifacts/founders-brand-hub/public/images/hero-brand-studio.png"
 type = "image"
 title = "african-brand-studio"
+
+[[outputs]]
+id = "2ZFtCJvOX04cB6KgfyzNn"
+uri = "file://.local/timesheet-entries.json"
+type = "unspecified"
+title = "FBF System — Complete Timesheet Log (March 2026)"
