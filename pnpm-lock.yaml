@@ -122,6 +122,10 @@ importers:
         version: 5.9.3
 
   artifacts/chapters-ledgers:
+    dependencies:
+      '@workspace/password-gateway':
+        specifier: workspace:*
+        version: link:../../lib/password-gateway
     devDependencies:
       '@radix-ui/react-dialog':
         specifier: ^1.1.7
@@ -209,6 +213,10 @@ importers:
         version: 3.9.0(react@19.1.0)
 
   artifacts/founders-brand-hub:
+    dependencies:
+      '@workspace/password-gateway':
+        specifier: workspace:*
+        version: link:../../lib/password-gateway
     devDependencies:
       '@replit/vite-plugin-cartographer':
         specifier: 'catalog:'
@@ -269,6 +277,10 @@ importers:
         version: 3.9.0(react@19.1.0)
 
   artifacts/founders-gaming:
+    dependencies:
+      '@workspace/password-gateway':
+        specifier: workspace:*
+        version: link:../../lib/password-gateway
     devDependencies:
       '@radix-ui/react-dialog':
         specifier: ^1.1.7
@@ -357,6 +369,9 @@ importers:
 
   artifacts/founders-kitchen:
     dependencies:
+      '@workspace/password-gateway':
+        specifier: workspace:*
+        version: link:../../lib/password-gateway
       '@workspace/shopping-data':
         specifier: workspace:*
         version: link:../../lib/shopping-data
@@ -555,6 +570,10 @@ importers:
         version: 3.25.76
 
   artifacts/fvc:
+    dependencies:
+      '@workspace/password-gateway':
+        specifier: workspace:*
+        version: link:../../lib/password-gateway
     devDependencies:
       '@replit/vite-plugin-cartographer':
         specifier: 'catalog:'
@@ -612,6 +631,10 @@ importers:
         version: 3.9.0(react@19.1.0)
 
   artifacts/sponsorship-hub:
+    dependencies:
+      '@workspace/password-gateway':
+        specifier: workspace:*
+        version: link:../../lib/password-gateway
     devDependencies:
       '@radix-ui/react-checkbox':
         specifier: ^1.1.5
@@ -707,6 +730,8 @@ importers:
   lib/api-client-react: {}
 
   lib/kola-data: {}
+
+  lib/password-gateway: {}
 
   lib/shopping-data: {}
 

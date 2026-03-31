@@ -76,6 +76,7 @@
     "zod": "catalog:"
   },
   "dependencies": {
-    "@workspace/shopping-data": "workspace:*"
+    "@workspace/shopping-data": "workspace:*",
+    "@workspace/password-gateway": "workspace:*"
   }
 }
