@@ -341,7 +341,7 @@ export default function PipelinePage() {
                 <p className="text-white/70 text-xs font-label">Design, QA, Print & Distribution</p>
               </div>
               <a
-                href="https://macharia-os-main.replit.app/hub/"
+                href="https://macharia-os-main.replit.app/hub/timesheet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-semibold uppercase tracking-wider bg-white/15 text-white/80 hover:bg-white/25 hover:text-white transition-colors"

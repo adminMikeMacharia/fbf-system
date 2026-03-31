@@ -128,7 +128,7 @@ export default function VisionBoard() {
                   </div>
                 ))}
                 <a
-                  href="https://macharia-os-main.replit.app/hub/"
+                  href="https://macharia-os-main.replit.app/hub/timesheet"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-label font-medium text-white transition-colors hover:opacity-90"
