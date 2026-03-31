@@ -16,6 +16,16 @@ import {
   ExternalLink,
   Eye,
   Clock,
+  BookOpen,
+  Brain,
+  Heart,
+  Target,
+  Users2,
+  Sparkles,
+  UserCheck,
+  Briefcase,
+  GraduationCap,
+  Download,
 } from "lucide-react";
 
 function SpotifyIcon({ className }: { className?: string }) {
@@ -206,9 +216,9 @@ export default function LedgerPage() {
               </div>
 
               {isExpanded && (
-                <div className="border-t border-border/50 p-4 bg-muted/20">
+                <div className="border-t border-border/50 p-4 sm:p-6 bg-muted/20">
                   {ep.isLive && (
-                    <div className="mb-4">
+                    <div className="mb-6">
                       <div className="flex flex-col sm:flex-row gap-4">
                         {ep.thumbnailUrl && (
                           <a
@@ -269,15 +279,88 @@ export default function LedgerPage() {
                       </div>
                     </div>
                   )}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {matrixColumns.slice(1).map((col) => (
-                      <div key={col.key}>
-                        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
-                          {col.label}
-                        </p>
-                        <p className="text-sm">{String(ep[col.key])}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                    <div className="md:col-span-2">
+                      <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: ARC_HEX[ep.arcNumber] }}>Arc Theme</p>
+                      <p className="text-sm font-medium">{ep.arcTheme}</p>
+                    </div>
+
+                    {[
+                      { key: "mindset" as const, label: "Mindset", icon: Brain, color: "#3A8ACA" },
+                      { key: "emotional" as const, label: "Emotional", icon: Heart, color: "#C45A3C" },
+                      { key: "strategic" as const, label: "Strategic", icon: Target, color: "#2AAF6A" },
+                      { key: "social" as const, label: "Social", icon: Users2, color: "#8A5ABF" },
+                      { key: "spiritual" as const, label: "Spiritual", icon: Sparkles, color: "#D4A832" },
+                    ].map(({ key, label, icon: Icon, color }) => (
+                      <div key={key} className="flex items-start gap-2.5">
+                        <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: `${color}15` }}>
+                          <Icon className="w-3.5 h-3.5" style={{ color }} />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{label}</p>
+                          <p className="text-sm">{ep[key]}</p>
+                        </div>
                       </div>
                     ))}
+
+                    <div className="flex items-start gap-2.5">
+                      <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0 mt-0.5 bg-[#003153]/10">
+                        <UserCheck className="w-3.5 h-3.5 text-[#003153]" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Ideal Guest Traits</p>
+                        <p className="text-sm">{ep.idealGuestTraits}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-2.5">
+                      <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0 mt-0.5 bg-[#F40009]/10">
+                        <Briefcase className="w-3.5 h-3.5 text-[#F40009]" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Matched Services</p>
+                        <p className="text-sm">{ep.matchedServices}</p>
+                      </div>
+                    </div>
+
+                    <div className="md:col-span-2 flex flex-col sm:flex-row gap-4 mt-2 pt-4 border-t border-border/50">
+                      <div className="flex gap-3 items-start flex-1">
+                        <div className="shrink-0 w-16 h-24 rounded-md overflow-hidden border border-border/50 bg-muted flex items-center justify-center">
+                          <img
+                            src={ep.suggestedBookCover}
+                            alt={ep.suggestedBook}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              target.style.display = "none";
+                              const parent = target.parentElement;
+                              if (parent) {
+                                const fallback = document.createElement("div");
+                                fallback.className = "flex items-center justify-center w-full h-full";
+                                fallback.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/40"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>';
+                                parent.appendChild(fallback);
+                              }
+                            }}
+                          />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Suggested Book</p>
+                          <p className="text-sm font-medium">{ep.suggestedBook}</p>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-start gap-2.5">
+                          <div className="w-7 h-7 rounded-md flex items-center justify-center shrink-0 mt-0.5 bg-amber-50">
+                            <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
+                          </div>
+                          <div>
+                            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Case Study</p>
+                            <p className="text-sm">{ep.caseStudy}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}
