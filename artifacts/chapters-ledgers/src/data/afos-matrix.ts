@@ -105,6 +105,49 @@ function getBookCoverUrl(suggestedBook: string): string {
   return `https://covers.openlibrary.org/b/title/${encodeURIComponent(title)}-M.jpg`;
 }
 
+const BOOK_COVER_OVERRIDES: Record<number, string> = {
+  1: "https://covers.openlibrary.org/b/isbn/9781416549000-M.jpg",
+  2: "https://covers.openlibrary.org/b/isbn/9780061789083-M.jpg",
+  3: "https://covers.openlibrary.org/b/isbn/9780062060242-M.jpg",
+  4: "https://covers.openlibrary.org/b/isbn/9781455554799-M.jpg",
+  5: "https://covers.openlibrary.org/b/isbn/9780062969743-M.jpg",
+  6: "https://covers.openlibrary.org/b/isbn/9781524761417-M.jpg",
+  7: "https://covers.openlibrary.org/b/isbn/9780321348104-M.jpg",
+  8: "https://covers.openlibrary.org/b/isbn/9781529329261-M.jpg",
+  9: "https://covers.openlibrary.org/b/isbn/9781594634727-M.jpg",
+  10: "https://covers.openlibrary.org/b/isbn/9780062839268-M.jpg",
+  11: "https://covers.openlibrary.org/b/isbn/9780470580462-M.jpg",
+  12: "https://covers.openlibrary.org/b/isbn/9780787960759-M.jpg",
+  13: "https://covers.openlibrary.org/b/isbn/9780307719218-M.jpg",
+  14: "https://covers.openlibrary.org/b/isbn/9780691158303-M.jpg",
+  15: "https://covers.openlibrary.org/b/isbn/9780470929827-M.jpg",
+  16: "https://covers.openlibrary.org/b/isbn/9780143118756-M.jpg",
+  17: "https://covers.openlibrary.org/b/isbn/9780307887894-M.jpg",
+  18: "https://covers.openlibrary.org/b/isbn/9780062249609-M.jpg",
+  19: "https://covers.openlibrary.org/b/isbn/9780553382563-M.jpg",
+  20: "https://covers.openlibrary.org/b/isbn/9780786303403-M.jpg",
+  21: "https://covers.openlibrary.org/b/isbn/9780062845788-M.jpg",
+  22: "https://covers.openlibrary.org/b/isbn/9780062273208-M.jpg",
+  23: "https://covers.openlibrary.org/b/isbn/9780201485677-M.jpg",
+  24: "https://covers.openlibrary.org/b/isbn/9780547678313-M.jpg",
+  25: "https://covers.openlibrary.org/b/isbn/9780679762881-M.jpg",
+  26: "https://covers.openlibrary.org/b/isbn/9780393354355-M.jpg",
+  27: "https://covers.openlibrary.org/b/isbn/9780674036192-M.jpg",
+  28: "https://covers.openlibrary.org/b/isbn/9780066620992-M.jpg",
+  29: "https://covers.openlibrary.org/b/isbn/9781610391849-M.jpg",
+  30: "https://covers.openlibrary.org/b/isbn/9780525512172-M.jpg",
+  31: "https://covers.openlibrary.org/b/isbn/9780812988406-M.jpg",
+  32: "https://covers.openlibrary.org/b/isbn/9780143037835-M.jpg",
+  33: "https://covers.openlibrary.org/b/isbn/9781591847816-M.jpg",
+  34: "https://covers.openlibrary.org/b/isbn/9780385349949-M.jpg",
+  35: "https://covers.openlibrary.org/b/isbn/9780435910990-M.jpg",
+  36: "https://covers.openlibrary.org/b/isbn/9780609810118-M.jpg",
+  37: "https://covers.openlibrary.org/b/isbn/9781594486616-M.jpg",
+  38: "https://covers.openlibrary.org/b/isbn/9780307463746-M.jpg",
+  39: "https://covers.openlibrary.org/b/isbn/9780688103804-M.jpg",
+  40: "https://covers.openlibrary.org/b/isbn/9781473652064-M.jpg",
+};
+
 interface LiveEpisodeData {
   siteEpisodeNumber: number;
   siteTitle: string;
@@ -351,7 +394,7 @@ export const episodes: Episode[] = rawEpisodes.map(ep => {
   return {
     ...ep,
     arcNumber: getArcNumber(ep.arcTheme),
-    suggestedBookCover: getBookCoverUrl(ep.suggestedBook),
+    suggestedBookCover: BOOK_COVER_OVERRIDES[ep.number] || getBookCoverUrl(ep.suggestedBook),
     isLive: !!live,
     ...(live || {}),
   };
