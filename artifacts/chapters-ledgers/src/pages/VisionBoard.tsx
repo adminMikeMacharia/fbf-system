@@ -33,8 +33,12 @@ const teamMembers = [
 export default function VisionBoard() {
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#003153] via-[#003153]/90 to-[#003153]/80 border-b-2 border-[#F40009] py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden border-b-2 border-[#F40009] py-16">
+        <div className="absolute inset-0">
+          <img src={`${import.meta.env.BASE_URL}images/hero-african-stories.png`} alt="African storyteller in library setting" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#003153]/90 via-[#003153]/80 to-[#003153]/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-xs font-label font-semibold tracking-[0.3em] text-[#F40009] uppercase mb-3">A Founders Battlefield Initiative</p>
             <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-wide text-white uppercase mb-4">

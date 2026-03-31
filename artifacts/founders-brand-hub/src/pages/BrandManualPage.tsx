@@ -29,8 +29,12 @@ export default function BrandManualPage() {
   return (
     <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 py-10">
       {/* Hero */}
-      <div className="mb-10 rounded-2xl overflow-hidden" style={{ background: "linear-gradient(135deg, #003153 0%, #00248C 100%)" }}>
-        <div className="px-8 py-12 md:flex md:items-center md:justify-between gap-8">
+      <div className="mb-10 rounded-2xl overflow-hidden relative">
+        <div className="absolute inset-0">
+          <img src={`${BASE}images/hero-brand-studio.png`} alt="African brand design studio" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#003153]/90 via-[#003153]/75 to-[#00248C]/60" />
+        </div>
+        <div className="relative px-8 py-12 md:flex md:items-center md:justify-between gap-8">
           <div>
             <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", color: "#D32F2F", textTransform: "uppercase" }}>
               Version 1.0 — March 2026

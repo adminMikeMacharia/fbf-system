@@ -50,10 +50,11 @@ export default function Home() {
     <div>
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          background: "linear-gradient(160deg, #001428 0%, #001e38 40%, #002244 70%, #001428 100%)",
-        }}
       >
+        <div className="absolute inset-0">
+          <img src={`${import.meta.env.BASE_URL}images/hero-gaming-arena.png`} alt="African gamers at esports tournament" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(0,20,40,0.85) 0%, rgba(0,30,56,0.80) 40%, rgba(0,34,68,0.75) 70%, rgba(0,20,40,0.85) 100%)" }} />
+        </div>
         <div className="absolute inset-0 hud-grid opacity-60" />
         <div className="absolute inset-0 scanline pointer-events-none" />
 

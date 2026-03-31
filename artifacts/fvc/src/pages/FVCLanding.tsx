@@ -50,7 +50,10 @@ export default function FVCLanding() {
   return (
     <div className="min-h-screen bg-[#003153] text-white">
       <header className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F40009]/15 via-transparent to-transparent" />
+        <div className="absolute inset-0">
+          <img src={`${import.meta.env.BASE_URL}images/hero-venture-capital.png`} alt="African venture capital meeting" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#003153]/90 via-[#003153]/75 to-[#003153]/50" />
+        </div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
           <div className="flex items-center gap-2 mb-6">
             <div className="w-10 h-10 rounded-lg bg-[#F40009] flex items-center justify-center shadow-md">

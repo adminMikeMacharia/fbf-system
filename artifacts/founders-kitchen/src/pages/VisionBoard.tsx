@@ -109,8 +109,12 @@ const ECOSYSTEM = [
 export default function VisionBoard() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="relative overflow-hidden bg-gradient-to-br from-[#003153] via-[#003153]/90 to-[#003153]/80 border-b-2 border-[#F40009]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <header className="relative overflow-hidden border-b-2 border-[#F40009]">
+        <div className="absolute inset-0">
+          <img src={`${import.meta.env.BASE_URL}images/hero-kitchen-studio.png`} alt="African chef in professional kitchen studio" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#003153]/90 via-[#003153]/75 to-[#003153]/50" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="flex items-start gap-4 mb-6">
             <div className="w-14 h-14 rounded-xl bg-[#F40009] flex items-center justify-center flex-shrink-0 shadow-lg">
               <ChefHat className="w-7 h-7 text-white" />

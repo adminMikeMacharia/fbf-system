@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "5t4faRCCBCcjPjQMaVfHs"
+uri = "file://artifacts/sponsorship-hub/public/images/hero-african-founders.png"
+type = "image"
+title = "african-founders-boardroom"
+
+[[generated]]
+id = "m6tkwYDNT4lOW6OWMCtFk"
+uri = "file://artifacts/founders-kitchen/public/images/hero-kitchen-studio.png"
+type = "image"
+title = "african-kitchen-studio"
+
+[[generated]]
+id = "d2Hk3T6ssVRWzS3mtSmbQ"
+uri = "file://artifacts/founders-gaming/public/images/hero-gaming-arena.png"
+type = "image"
+title = "african-gaming-arena"
+
+[[generated]]
+id = "R2L6-Sb-RFl45KfRtMbmf"
+uri = "file://artifacts/fvc/public/images/hero-venture-capital.png"
+type = "image"
+title = "african-venture-capital"
+
+[[generated]]
+id = "3ySiYm7_43eHMaG84_kva"
+uri = "file://artifacts/chapters-ledgers/public/images/hero-african-stories.png"
+type = "image"
+title = "african-storyteller-library"
+
+[[generated]]
+id = "zJ5612A9k-7m7I7wBZPP-"
+uri = "file://artifacts/founders-brand-hub/public/images/hero-brand-studio.png"
+type = "image"
+title = "african-brand-studio"
