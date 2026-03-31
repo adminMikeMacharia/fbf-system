@@ -19,7 +19,7 @@ const ecosystemLinks = [
     description: "The Founder Operating System — maps all 40 episodes, 6 ARCs, and matched services. The strategic backbone that structures the book series.",
     icon: Map,
     color: "#3A8ACA",
-    path: "/afos-atlas/",
+    path: "https://macharia-os-main.replit.app/hub/",
     type: "Internal",
   },
   {
@@ -27,7 +27,7 @@ const ecosystemLinks = [
     description: "AI-powered founder coaching and intelligence layer. Provides data analytics and pattern recognition across the AFOS matrix for editorial insights.",
     icon: Brain,
     color: "#8A5ABF",
-    path: null,
+    path: "https://macharia-os-main.replit.app/hub/",
     type: "Ecosystem",
   },
   {
@@ -35,7 +35,7 @@ const ecosystemLinks = [
     description: "Communications, PR, and creative services arm. Manages the Business Daily column syndication, media relations, and book launch communications.",
     icon: MessageSquare,
     color: "#F4C430",
-    path: null,
+    path: "https://macharia-os-main.replit.app/hub/",
     type: "Ecosystem",
   },
   {
@@ -43,7 +43,7 @@ const ecosystemLinks = [
     description: "Live events and programming arm. Hosts reading club gatherings, book launches, and founder storytelling events tied to the Ledgers series.",
     icon: CalendarDays,
     color: "#2AAF6A",
-    path: null,
+    path: "https://macharia-os-main.replit.app/hub/",
     type: "Ecosystem",
   },
   {
@@ -51,15 +51,15 @@ const ecosystemLinks = [
     description: "Intellectual property registry and protection. Manages copyright for the book series, episode content, and the AFOS framework itself.",
     icon: Shield,
     color: "#C45A3C",
-    path: "/afos-atlas/#ip-registry",
+    path: "https://macharia-os-main.replit.app/hub/",
     type: "Internal",
   },
   {
-    name: "Gaming Agent",
+    name: "Founders Gaming",
     description: "The Founders Game — gamified version of the AFOS journey. Each game level maps to a book chapter, creating interactive learning from the Ledgers content.",
     icon: Gamepad2,
     color: "#007FFF",
-    path: "/afos-atlas/#founders-game",
+    path: "/founders-gaming/",
     type: "Internal",
   },
   {
@@ -71,11 +71,11 @@ const ecosystemLinks = [
     type: "External",
   },
   {
-    name: "MachariaOS Timesheet",
-    description: "Project tracking for the fbf_chapters venture. Tracks billable hours, production milestones, and budget allocation across the book series pipeline.",
+    name: "Sponsorship Hub",
+    description: "Sponsorship products, partnership tiers, and brand integration opportunities across the Founders Battlefield ecosystem.",
     icon: Clock,
     color: "#003153",
-    path: "/timesheet/",
+    path: "/sponsorship-hub/",
     type: "Internal",
   },
 ];

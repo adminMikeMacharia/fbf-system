@@ -167,10 +167,10 @@ export default function App() {
             {((): Array<{ label: string; href: string; external?: boolean }> => [
               { label: "Founders Kitchen", href: "/founders-kitchen/" },
               { label: "Chapters & Ledgers", href: "/chapters-ledgers/" },
-              { label: "AFOS Atlas", href: "/afos-atlas/" },
-              { label: "Investor Portal", href: "/investor-portal/" },
+              { label: "Founders Gaming", href: "/founders-gaming/" },
+              { label: "FVC", href: "/fvc/" },
               { label: "Sponsorship Hub", href: "/sponsorship-hub/" },
-              { label: "Ponea OS", href: "/ponea-os/" },
+              { label: "MachariaOS Hub", href: "https://macharia-os-main.replit.app/hub/", external: true },
               { label: "foundersbattlefield.org", href: "https://foundersbattlefield.org", external: true },
             ])().map((link) => (
               <a

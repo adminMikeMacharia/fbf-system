@@ -1,9 +1,11 @@
-import { ExternalLink, BookOpen, ChefHat, Map, Megaphone, Globe, Library, BookMarked, FileText } from "lucide-react";
+import { ExternalLink, BookOpen, Megaphone, Globe, Gamepad2, Landmark, Palette, Library, BookMarked, FileText } from "lucide-react";
 
 const ecosystemLinks = [
   { label: "Chapters & Ledgers", href: "/chapters-ledgers/", icon: BookOpen, external: false },
-  { label: "AFOS Atlas", href: "/afos-atlas/", icon: Map, external: false },
+  { label: "Founders Gaming", href: "/founders-gaming/", icon: Gamepad2, external: false },
   { label: "Sponsorship Hub", href: "/sponsorship-hub/", icon: Megaphone, external: false },
+  { label: "Brand Hub", href: "/founders-brand-hub/", icon: Palette, external: false },
+  { label: "FVC", href: "/fvc/", icon: Landmark, external: false },
   { label: "foundersbattlefield.org", href: "https://foundersbattlefield.org", icon: Globe, external: true },
 ];
 
@@ -24,7 +26,7 @@ export default function EcosystemBar() {
             return (
               <a
                 key={link.label}
-                href={link.external ? link.href : link.href}
+                href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"

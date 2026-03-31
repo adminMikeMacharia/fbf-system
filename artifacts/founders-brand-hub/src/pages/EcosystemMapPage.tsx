@@ -31,7 +31,7 @@ const products = [
     name: "AFOS Atlas",
     tagline: "Africa's founder opportunity map",
     desc: "The comprehensive atlas of African founder opportunities — grants, accelerators, ecosystems, and capital sources across 54 countries.",
-    href: "/afos-atlas/",
+    href: "https://macharia-os-main.replit.app/hub/",
     color: "#00897B",
     bgColor: "#F0FDF4",
     borderColor: "#BBF7D0",
@@ -40,10 +40,10 @@ const products = [
     status: "Live",
   },
   {
-    name: "AFOS Atlas Investor Portal",
-    tagline: "Private investor intelligence",
-    desc: "Gated investor intelligence layer within the AFOS Atlas — portfolio tracking, deal flow, and founder-to-investor match-making.",
-    href: "/investor-portal/",
+    name: "Founders Venture Capital",
+    tagline: "Structured funding for African ventures",
+    desc: "A structured funding platform for African ventures — backed by battle-tested founders, governed by hard-earned lessons.",
+    href: "/fvc/",
     color: "#1C39BB",
     bgColor: "#EEF2FF",
     borderColor: "#C7D2FE",
@@ -64,10 +64,10 @@ const products = [
     status: "Live",
   },
   {
-    name: "Ponea OS",
-    tagline: "Health founder operating system",
-    desc: "Operational platform for Ponea Health — managing concierge bookings, health partner network, and digital health founder services.",
-    href: "/ponea-os/",
+    name: "Ponea Health",
+    tagline: "Africa's health concierge platform",
+    desc: "Ponea Health — managing concierge bookings, health partner network, and digital health founder services across East Africa.",
+    href: "https://macharia-os-main.replit.app/hub/",
     color: "#0078D4",
     bgColor: "#EFF6FF",
     borderColor: "#BAE6FD",
@@ -76,28 +76,28 @@ const products = [
     status: "Live",
   },
   {
-    name: "Ponea Health",
-    tagline: "Africa's health concierge platform",
-    desc: "Ponea Health brand platform — showcasing health services, partner clinics, and digital health solutions across East Africa.",
-    href: "/ponea-brand/",
+    name: "MachariaOS Hub",
+    tagline: "Central operating system",
+    desc: "The unified operating system hub for all FBF ventures — AFOS Atlas, timesheets, IP registry, and venture management.",
+    href: "https://macharia-os-main.replit.app/hub/",
     color: "#00897B",
     bgColor: "#F0FDF4",
     borderColor: "#A7F3D0",
-    emoji: "❤️",
-    category: "Health Brand",
+    emoji: "⚙️",
+    category: "Operations",
     status: "Live",
   },
   {
     name: "Founders Gaming",
     tagline: "Gamified founder challenges",
     desc: "The gamification layer of the FBF ecosystem — founder challenges, leaderboards, and competitive learning experiences.",
-    href: "#",
+    href: "/founders-gaming/",
     color: "#8B5CF6",
     bgColor: "#F5F3FF",
     borderColor: "#DDD6FE",
     emoji: "🎮",
     category: "Gaming & Engagement",
-    status: "Coming Soon",
+    status: "Live",
   },
   {
     name: "Founders Brand Hub",
@@ -133,10 +133,10 @@ export default function EcosystemMapPage() {
       {/* Stats bar */}
       <div className="mb-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
         {[
-          { label: "Live Products", value: "8" },
-          { label: "Coming Soon", value: "1" },
+          { label: "Live Products", value: String(products.filter(p => p.status === "Live").length) },
+          { label: "Portals", value: "6" },
           { label: "Countries Served", value: "3+" },
-          { label: "Categories", value: "8" },
+          { label: "Categories", value: String(new Set(products.map(p => p.category)).size) },
         ].map((stat, i) => (
           <div key={i} className="bg-white rounded-xl border border-gray-200 p-4 text-center">
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: 32, color: "#003153", lineHeight: 1 }}>
@@ -218,8 +218,9 @@ export default function EcosystemMapPage() {
             </div>
           );
 
+          const isExternal = product.href.startsWith("http");
           return product.href !== "#" ? (
-            <a key={i} href={product.href} className="block" style={{ textDecoration: "none" }}>
+            <a key={i} href={product.href} className="block" style={{ textDecoration: "none" }} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
               {card}
             </a>
           ) : (
@@ -241,21 +242,21 @@ export default function EcosystemMapPage() {
               color: "#003153",
               bg: "#EFF6FF",
               border: "#BFDBFE",
-              items: ["Founders Kitchen", "Chapters & Ledgers", "AFOS Atlas", "Founders Brand Hub"],
+              items: ["Founders Kitchen", "Chapters & Ledgers", "AFOS Atlas (MachariaOS)", "Founders Brand Hub"],
             },
             {
               label: "Capital & Growth",
               color: "#D32F2F",
               bg: "#FEF2F2",
               border: "#FECACA",
-              items: ["AFOS Atlas Investor Portal", "Sponsorship Hub", "Founders Gaming"],
+              items: ["Founders Venture Capital", "Sponsorship Hub", "Founders Gaming"],
             },
             {
-              label: "Health",
+              label: "Operations & Health",
               color: "#00897B",
               bg: "#F0FDF4",
               border: "#BBF7D0",
-              items: ["Ponea OS", "Ponea Health"],
+              items: ["MachariaOS Hub", "Ponea Health"],
             },
           ].map((group, gi) => (
             <div key={gi} className="rounded-xl border p-4" style={{ backgroundColor: group.bg, borderColor: group.border }}>

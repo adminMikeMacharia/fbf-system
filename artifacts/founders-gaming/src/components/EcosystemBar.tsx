@@ -1,10 +1,11 @@
-import { ExternalLink, ChefHat, BookOpen, Map, Megaphone, Globe, Gamepad2 } from "lucide-react";
+import { ExternalLink, ChefHat, BookOpen, Megaphone, Globe, Gamepad2, Landmark, Palette } from "lucide-react";
 
 const ecosystemLinks = [
   { label: "Founders Kitchen", href: "/founders-kitchen/", icon: ChefHat, external: false },
   { label: "Chapters & Ledgers", href: "/chapters-ledgers/", icon: BookOpen, external: false },
-  { label: "AFOS Atlas", href: "/afos-atlas/", icon: Map, external: false },
   { label: "Sponsorship Hub", href: "/sponsorship-hub/", icon: Megaphone, external: false },
+  { label: "Brand Hub", href: "/founders-brand-hub/", icon: Palette, external: false },
+  { label: "FVC", href: "/fvc/", icon: Landmark, external: false },
   { label: "foundersbattlefield.org", href: "https://foundersbattlefield.org", icon: Globe, external: true },
 ];
 

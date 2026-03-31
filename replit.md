@@ -33,10 +33,16 @@ A pnpm monorepo with 6 React/Vite frontend portals + 1 Express API server, conne
 - `lib/kola-data` — Kola venture case study data (stub for @workspace/kola-data)
 - `lib/shopping-data` — Shopping/brand data (stub for @workspace/shopping-data)
 
-## Auth Flow
-- Portals check for `hub_token` in localStorage
-- Unauthenticated users are redirected to MachariaOS Hub for login
-- After login, MachariaOS redirects back to the portal with a token
+## Password Gateway
+- All 6 portals use a shared `PasswordGateway` component (`lib/password-gateway/index.tsx`)
+- PIN: 2403 (stored as `DEMO_PIN`)
+- Session-based auth via `sessionStorage`
+
+## Ecosystem Links
+- All EcosystemBar components across portals cross-link to sibling portals
+- AFOS Atlas / MachariaOS Hub links point to `https://macharia-os-main.replit.app/hub/`
+- Brand Hub Ecosystem Map page shows all products with dynamic stats
+- External links (MachariaOS, foundersbattlefield.org) open in new tabs
 
 ## Deployment
 - Target: autoscale
