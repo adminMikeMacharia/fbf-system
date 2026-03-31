@@ -27,6 +27,7 @@ const statusConfig = {
 const teamMembers = [
   { name: "Dennis Mugumo", role: "Narrative Architect / Creative Director", color: "#003153" },
   { name: "John Gikanga", role: "Design Lead", color: "#007FFF" },
+  { name: "Pauline Warui", role: "Reviewer & QA — Founders Battlefield", color: "#8A5ABF" },
   { name: "Mike Macharia", role: "Final Approval / Executive Producer", color: "#F40009" },
 ];
 
@@ -126,6 +127,16 @@ export default function VisionBoard() {
                     </div>
                   </div>
                 ))}
+                <a
+                  href="https://macharia-os-main.replit.app/hub/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-label font-medium text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: "#003153" }}
+                >
+                  <Clock className="w-3.5 h-3.5" />
+                  View Timesheet on MachariaOS
+                </a>
               </CardContent>
             </Card>
 

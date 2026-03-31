@@ -336,10 +336,19 @@ export default function PipelinePage() {
               <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
                 <Users className="w-6 h-6 text-white" />
               </div>
-              <div>
+              <div className="flex-1">
                 <h3 className="text-xl font-display font-bold text-white uppercase tracking-wide">Production Team</h3>
-                <p className="text-white/70 text-xs font-label">Design, Print & Distribution</p>
+                <p className="text-white/70 text-xs font-label">Design, QA, Print & Distribution</p>
               </div>
+              <a
+                href="https://macharia-os-main.replit.app/hub/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-semibold uppercase tracking-wider bg-white/15 text-white/80 hover:bg-white/25 hover:text-white transition-colors"
+              >
+                <Database className="w-3 h-3" />
+                Timesheet
+              </a>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
               The execution engine. The production team receives structured, AI-processed material and transforms it into final published products — books, columns, and digital content.
@@ -351,6 +360,13 @@ export default function PipelinePage() {
               <div>
                 <p className="text-sm font-semibold text-foreground">Visual Design & Layout</p>
                 <p className="text-xs text-muted-foreground">Book covers, interior typography, ARC color theming, and visual identity. John Gikanga leads design execution using brand guidelines established through the FBF brand system.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#003153" }} />
+              <div>
+                <p className="text-sm font-semibold text-foreground">Review & Quality Assurance</p>
+                <p className="text-xs text-muted-foreground">Pauline Warui reviews all outputs for accuracy, consistency, and quality before final approval. Ensures every chapter, ledger entry, and published asset meets Founders Battlefield editorial standards.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
