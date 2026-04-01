@@ -17,6 +17,7 @@ import {
   Shield,
   QrCode,
   Database,
+  MapPin,
 } from "lucide-react";
 import BrandPipeline from "./BrandPipeline";
 
@@ -79,6 +80,81 @@ const CURRENT_PARTNERS = [
   },
 ];
 
+const BRAND_ZONE_PARTNERS = [
+  {
+    zone: "Cooking Wall — Ovens",
+    brands: "Bosch / Miele",
+    status: "Target",
+    color: "#003153",
+    method: "Built-in double oven stack to cabinetry. Always visible in hero shot. Used every episode.",
+    camera: "HERO · EVERY EP",
+    episodes: "10/10",
+  },
+  {
+    zone: "Cooking Wall — Range",
+    brands: "Smeg / Wolf",
+    status: "Target",
+    color: "#003153",
+    method: "Professional 6-burner gas range in stone alcove surround. Pot rail above. Central to all cooking sequences.",
+    camera: "COOKING · EVERY EP",
+    episodes: "10/10",
+  },
+  {
+    zone: "Fridge",
+    brands: "Samsung Family Hub / Haier / Smeg",
+    status: "TBC",
+    color: "#F40009",
+    method: "Ingredient reveal on opening. Samsung touchscreen displays episode content, recipe of the day, Naivas QR code. KES 2–3M/season partnership value.",
+    camera: "REVEAL · INGREDIENT PULL",
+    episodes: "10/10",
+  },
+  {
+    zone: "Spice Shelf",
+    brands: "Tropical Heat · Kasuku · Bidco · Blue Band · Menengai",
+    status: "Target",
+    color: "#177245",
+    method: "Permanent shelf display. Stone backsplash behind. Always lit, always in frame. Authentic pantry styling — East African spice brands arranged for camera.",
+    camera: "BACKGROUND · ALWAYS",
+    episodes: "10/10",
+  },
+  {
+    zone: "Open Shelving — Serveware",
+    brands: "Luminarc — full range",
+    status: "Target",
+    color: "#007FFF",
+    method: "All glassware and serveware is Luminarc. Every plating and meal reveal shot includes this zone. KES 300–500K product offset.",
+    camera: "MEAL REVEAL · PLATING",
+    episodes: "10/10",
+  },
+  {
+    zone: "Counter Appliances",
+    brands: "Midea blender · Mika kettle",
+    status: "Target",
+    color: "#8A5ABF",
+    method: "Placed on counter. Used 2–3 times per episode in prep sequences. Natural product placement through active use.",
+    camera: "PREP SEQUENCE",
+    episodes: "10/10",
+  },
+  {
+    zone: "Grill Station",
+    brands: "Kenchic · Festive · Bidco oil",
+    status: "Target",
+    color: "#E89832",
+    method: "Products in active use at grill. Packaging on prep counter beside grill. Flame and sizzle shots — high drama, high brand visibility.",
+    camera: "FLAME · DRAMATIC",
+    episodes: "4–5 eps",
+  },
+  {
+    zone: "Dining Table + Episode Close",
+    brands: "Naivas \"Shop the Episode\"",
+    status: "Confirmed",
+    color: "#177245",
+    method: "Finished meal on Luminarc serveware. Naivas QR display card on table. Viewers scan to buy ingredients for the recipe they just watched.",
+    camera: "EPISODE CLOSE",
+    episodes: "10/10",
+  },
+];
+
 const SPONSOR_TIERS = [
   {
     tier: "Diamond Series Sponsor",
@@ -91,7 +167,7 @@ const SPONSOR_TIERS = [
       "Product placement in every episode — natural, not forced",
       "Co-branded recipe cards and social content",
       "TV47 broadcast credits and lower-thirds",
-      "Exclusive sponsor activation event at Tigoni House",
+      "Exclusive sponsor activation event at the permanent studio",
       "Full post-season sponsor report — reach, impressions, media pickup",
     ],
   },
@@ -128,7 +204,7 @@ const SPONSOR_TIERS = [
     icon: CreditCard,
     color: "#177245",
     price: "Infrastructure partnership",
-    description: "Payment and ticketing infrastructure partner for FK private dining events. Brand presence at all invite-only events. Platform-level integration via hustlesasa or equivalent.",
+    description: "Payment and ticketing infrastructure partner for FK private dining and corporate events. Brand presence at all invite-only events. Platform-level integration via hustlesasa or equivalent.",
     benefits: [
       "Payment processing for all FK private dining events",
       "Brand presence on tickets, check-in screens, receipts",
@@ -144,20 +220,20 @@ const ACTIVATION_OPPORTUNITIES = [
     title: "Cooking with Brand Ingredients",
     icon: ChefHat,
     description: "The most organic form of product placement. Mike uses the sponsor's ingredients during the episode. The product is part of the story, not an interruption. Viewers see the brand being used naturally.",
-    examples: ["Olive oil brands", "Spice companies", "Premium ingredients", "Kenyan-sourced products"],
+    examples: ["Tropical Heat spices", "Bidco cooking oil", "Blue Band butter", "Kasuku products", "Kenchic chicken"],
     color: "#F40009",
   },
   {
     title: "Kitchen Equipment Sponsors",
     icon: Utensils,
-    description: "The Tigoni House kitchen is the set. Equipment sponsors get their products in frame for every episode — cookware, appliances, tools. Permanent placement for the season.",
-    examples: ["Cookware brands", "Kitchen appliances", "Professional tools", "Counter-top equipment"],
+    description: "The permanent studio kitchen is the set. Equipment sponsors get their products in frame for every episode — cookware, appliances, tools. Permanent placement for the season.",
+    examples: ["Bosch/Miele ovens", "Smeg/Wolf range", "Midea blender", "Mika kettle", "Luminarc serveware"],
     color: "#E89832",
   },
   {
     title: "Lifestyle Brand Tie-ins",
     icon: Package,
-    description: "FK is about founders and their lifestyles. Lifestyle brands (beverages, wellness, fashion) can activate through the private dining events, gift bags, or episode integration.",
+    description: "FK is about founders and their lifestyles. Lifestyle brands can activate through the private dining events, corporate hire days, gift bags, or episode integration.",
     examples: ["Premium beverages", "Wellness brands", "Fashion / apparel", "Gift and experience brands"],
     color: "#177245",
   },
@@ -165,7 +241,7 @@ const ACTIVATION_OPPORTUNITIES = [
     title: "Tech & Platform Partners",
     icon: Laptop,
     description: "FK runs on the FBF Platform — event_category = founders_kitchen. Tech partners can co-brand the QR check-in, matchmaking layer, or CRM communications for private dining events.",
-    examples: ["QR/check-in technology", "CRM platforms", "Communication tools", "Analytics partners"],
+    examples: ["Samsung Family Hub screen", "Naivas Shop the Episode", "QR/check-in technology", "Analytics partners"],
     color: "#007FFF",
   },
 ];
@@ -201,7 +277,7 @@ export default function PartnershipsPage() {
           <p className="text-xs font-label font-semibold tracking-[0.3em] text-[#F40009] uppercase mb-1">FK Strategy & Growth</p>
           <h1 className="text-3xl sm:text-4xl font-display font-bold tracking-wide text-white uppercase">Partnership Plan</h1>
           <p className="text-white/70 mt-2 max-w-2xl text-sm sm:text-base leading-relaxed font-body">
-            All current and potential FK partnerships — production partners, sponsor tiers adapted from The Arena model, brand activation opportunities, and the platform infrastructure connecting FK to the multi-venture event system.
+            All current and potential FK partnerships — production partners, brand-zone placements from the v2 set design brief, sponsor tiers, brand activation opportunities, and the platform infrastructure connecting FK to the multi-venture event system.
           </p>
         </div>
       </header>
@@ -235,6 +311,35 @@ export default function PartnershipsPage() {
                           <span>{d}</span>
                         </div>
                       ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <SectionHeader icon={MapPin} title="Brand-Zone Placement Partners" />
+          <p className="text-sm text-muted-foreground mb-4 font-body">
+            Specific brand partners assigned to studio zones — from the v2 set design brief. Every zone has a brand, a placement method, and a camera moment. Architectural product placement, not promotional.
+          </p>
+          <div className="space-y-3">
+            {BRAND_ZONE_PARTNERS.map((p, i) => (
+              <div key={i} className="bg-card border border-card-border rounded-xl p-5">
+                <div className="flex items-start gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap mb-1">
+                      <h4 className="font-label text-base font-semibold text-foreground">{p.zone}</h4>
+                      <span className="text-[10px] font-label font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${p.color}12`, color: p.color, border: `1px solid ${p.color}25` }}>
+                        {p.status}
+                      </span>
+                    </div>
+                    <p className="text-sm font-label font-medium text-[#003153] mb-1">{p.brands}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed font-body mb-2">{p.method}</p>
+                    <div className="flex items-center gap-3">
+                      <span className="text-[10px] font-label font-bold px-1.5 py-0.5 rounded bg-[#F40009]/10 text-[#F40009]">{p.camera}</span>
+                      <span className="text-[10px] font-label text-muted-foreground">{p.episodes}</span>
                     </div>
                   </div>
                 </div>

@@ -28,10 +28,18 @@ A pnpm monorepo with 6 React/Vite frontend portals + 1 Express API server, conne
 - `server.mjs` — Express production server serving all portals + API
 - `pnpm-workspace.yaml` — Workspace config with catalog dependencies
 
-## Stub Packages
+## Shared Packages
 - `lib/api-client-react` — API client hooks (stub for @workspace/api-client-react)
 - `lib/kola-data` — Kola venture case study data (stub for @workspace/kola-data)
-- `lib/shopping-data` — Shopping/brand data (stub for @workspace/shopping-data)
+- `lib/shopping-data` — Real household consumption data parsed from 15 Carrefour receipts (Apr 2025–Mar 2026). Exports `TOP_BRANDS` (79 brands sorted by spend) and `SHOPPING_SUMMARY` with `{ totalSpend, dateRange, totalLineItems, uniqueProducts }`. Powers the Brand Engagement Pipeline on the FK Partnerships page.
+
+## Founders Kitchen v2 Set Design Brief
+- Vision Board page reflects the permanent owned studio concept (brick-and-timber, Karen/Muthaiga/Runda/Gigiri)
+- 7 Luke Carter / IN 5 Architects renders in public/images/ (render-*.jpg)
+- 2 brand placement reference photos (placement-samsung-fridge.jpg, placement-spice-shelf.jpg)
+- Sections: Design Renders, Architecture, Arrival Sequence, Kitchen Interior, Fridge Decision, Brand Integration Map, Production Strategy & Timeline, Budget
+- Modes of Operation: FK Filming, Private Dining, Corporate Events
+- Partnerships page includes brand-zone placement partners from the v2 brief
 
 ## Password Gateway
 - All 6 portals use a shared `PasswordGateway` component (`lib/password-gateway/index.tsx`)

@@ -37,7 +37,7 @@ const PITCH_NOTES: Record<string, { tier: "diamond" | "platinum" | "content-owne
   "Persil": { tier: "platinum", notes: "Henkel brand — home care premium positioning. Chef's apron care segment." },
   "Sunrice": { tier: "platinum", notes: "Rice is a staple in FK recipe episodes. Direct cooking ingredient placement — rice as the base for founder meals." },
   "Sensodyne": { tier: "content-owner", notes: "GSK brand — wellness and self-care content segment. Post-dinner dental care routine." },
-  "Mortein": { tier: "content-owner", notes: "Reckitt brand — home environment quality. Tigoni House pest-free kitchen environment messaging." },
+  "Mortein": { tier: "content-owner", notes: "Reckitt brand — home environment quality. Pest-free studio kitchen environment messaging." },
   "Royco": { tier: "platinum", notes: "Unilever brand — highest item count (28 cubes). Seasoning is used in every FK recipe. Most organic product placement opportunity." },
   "Bio Food": { tier: "platinum", notes: "Kenyan dairy brand — healthy breakfast and dessert ingredient. Recipe card co-branding opportunity." },
   "Supa Loaf": { tier: "content-owner", notes: "Most purchased single product by quantity (23 loaves). Breakfast prep scenes and artisan toast creations." },
