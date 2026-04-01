@@ -86,12 +86,20 @@ localPort = 18750
 externalPort = 5000
 
 [[ports]]
+localPort = 18751
+externalPort = 8099
+
+[[ports]]
 localPort = 19200
 externalPort = 6800
 
 [[ports]]
 localPort = 21050
 externalPort = 8008
+
+[[ports]]
+localPort = 21051
+externalPort = 9000
 
 [nix]
 channel = "stable-25_05"
@@ -101,3 +109,7 @@ deploymentTarget = "autoscale"
 run = ["bash", "start.sh"]
 build = ["bash", "build.sh"]
 publicDir = "artifacts"
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 120000
