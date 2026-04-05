@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev:brand-hub": "pnpm --filter @workspace/founders-brand-hub run dev",
-    "dev:kitchen":   "pnpm --filter @workspace/founders-kitchen run dev",
-    "dev:gaming":    "pnpm --filter @workspace/founders-gaming run dev",
-    "dev:fvc":       "pnpm --filter @workspace/fvc run dev",
-    "dev:sponsorship": "pnpm --filter @workspace/sponsorship-hub run dev",
-    "dev:chapters":  "pnpm --filter @workspace/chapters-ledgers run dev"
+    "dev:api":          "pnpm --filter @workspace/api-server run dev",
+    "dev:brand-hub":    "pnpm --filter @workspace/founders-brand-hub run dev",
+    "dev:kitchen":      "pnpm --filter @workspace/founders-kitchen run dev",
+    "dev:gaming":       "pnpm --filter @workspace/founders-gaming run dev",
+    "dev:fvc":          "pnpm --filter @workspace/fvc run dev",
+    "dev:sponsorship":  "pnpm --filter @workspace/sponsorship-hub run dev",
+    "dev:chapters":     "pnpm --filter @workspace/chapters-ledgers run dev"
   },
   "dependencies": {
     "express": "^5.1.0",

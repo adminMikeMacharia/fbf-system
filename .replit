@@ -2,6 +2,27 @@ modules = ["nodejs-20", "postgresql-16"]
 [agent]
 expertMode = true
 
+[[artifacts]]
+id = "artifacts/api-server"
+
+[[artifacts]]
+id = "artifacts/sponsorship-hub"
+
+[[artifacts]]
+id = "artifacts/founders-kitchen"
+
+[[artifacts]]
+id = "artifacts/founders-gaming"
+
+[[artifacts]]
+id = "artifacts/fvc"
+
+[[artifacts]]
+id = "artifacts/founders-brand-hub"
+
+[[artifacts]]
+id = "artifacts/chapters-ledgers"
+
 [userenv]
 
 [userenv.shared]
@@ -25,6 +46,34 @@ author = "agent"
 task = "workflow.run"
 args = "Start application"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/api-server: API"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/sponsorship-hub: web"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/founders-kitchen: web"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/founders-gaming: web"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/fvc: web"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/founders-brand-hub: web"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/chapters-ledgers: web"
+
 [[workflows.workflow]]
 name = "Start application"
 author = "agent"
@@ -36,6 +85,84 @@ outputType = "webview"
 task = "shell.exec"
 args = "bash dev.sh"
 waitForPort = 5000
+
+[[workflows.workflow]]
+name = "artifacts/api-server: API"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "API_PORT=8080 pnpm --filter @workspace/api-server run dev"
+waitForPort = 8080
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "artifacts/sponsorship-hub: web"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/sponsorship-hub run dev"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "artifacts/founders-kitchen: web"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/founders-kitchen run dev"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "artifacts/founders-gaming: web"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/founders-gaming run dev"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "artifacts/fvc: web"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/fvc run dev"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "artifacts/founders-brand-hub: web"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/founders-brand-hub run dev"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "artifacts/chapters-ledgers: web"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/chapters-ledgers run dev"
+
+[workflows.workflow.metadata]
+outputType = "webview"
 
 [[ports]]
 localPort = 3001
