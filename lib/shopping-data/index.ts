@@ -1,4 +1,4 @@
-export interface TopBrand {
+export interface BrandData {
   brand: string;
   totalSpend: number;
   itemCount: number;
@@ -6,893 +6,653 @@ export interface TopBrand {
   categories: string[];
 }
 
-export const TOP_BRANDS: TopBrand[] = [
-  {
-    "brand": "Dove",
-    "totalSpend": 12869,
-    "itemCount": 16,
-    "products": [
-      "Dove Clensing Original Bar Soap 90G",
-      "DOVE SECRETS RELAXING RIT BW500ML",
-      "Dove Deeply Nourishing Shower Gel 500ml",
-      "Dove Bar Pink 90G Valuepack",
-      "Dove Invigorating Ritual 750Ml"
-    ],
-    "categories": [
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Farmers Choice",
-    "totalSpend": 5729,
-    "itemCount": 7,
-    "products": [
-      "Farmers Choice Extra Long Pork Frankfurters 500g",
-      "Farmers Choice Collar Bacon 400G",
-      "Farmers Choice Pork Sausages 1Kg",
-      "Farmers Choice Pork Ham",
-      "Farmers Choice Streaky Bacon 400G"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Pick N Peel",
-    "totalSpend": 5408,
-    "itemCount": 17,
-    "products": [
-      "Pick N Peel Apple Juice 1L",
-      "Pick N Peel Orange Juice 1L",
-      "Pick N Peel Red Grape Juice 1L",
-      "Pick N Peel White Grape Juice 1L",
-      "Pick N Peel Tropical Mix Juice 1L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Brookside",
-    "totalSpend": 4210,
-    "itemCount": 8,
-    "products": [
-      "Brookside Salted Butter Wrap 500G",
-      "Brookside Soy Plant Based Milk - Unsweetened",
-      "Brookside Farm Fresh Whole Milk 3L - Fresh Milk bottle"
-    ],
-    "categories": [
-      "dairy"
-    ]
-  },
-  {
-    "brand": "Jik",
-    "totalSpend": 3791,
-    "itemCount": 4,
-    "products": [
-      "Jik Bleach Regular 2.25L",
-      "Jik Bleach Colours 750Ml",
-      "Jik Bleach Regular 1.5L",
-      "Jik Bleach Colors 1.5L"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Bio Food",
-    "totalSpend": 2828,
-    "itemCount": 8,
-    "products": [
-      "Bio Natural Plain Yoghurt 150ml",
-      "Bio Strawberry Yogurt 90ml x Pack of 4",
-      "Bio Yogurt Vanilla 450Ml",
-      "Bio Fob Blueberry Yogurt 200ml",
-      "Bio Yoghurt Strawberry 1L",
-      "Bio Whole Fresh Milk 2L"
-    ],
-    "categories": [
-      "dairy"
-    ]
-  },
-  {
-    "brand": "Mortein",
-    "totalSpend": 2600,
-    "itemCount": 1,
-    "products": [
-      "Mortein Odourles Insect Twin 600Ml"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Fay",
-    "totalSpend": 2573,
-    "itemCount": 5,
-    "products": [
-      "Fay Toilet Roll White X10",
-      "Fay Kitchen Towels X2"
-    ],
-    "categories": [
-      "household"
-    ]
-  },
-  {
-    "brand": "Sunrice",
-    "totalSpend": 2177,
-    "itemCount": 4,
-    "products": [
-      "Sunrice Basmati Rice 2Kg",
-      "Sunrice All Day Basmati Rice 2Kg",
-      "Sunrice Basmati Rice 1kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Carrefour",
-    "totalSpend": 1858,
-    "itemCount": 3,
-    "products": [
-      "Carrefour Lavender Scent Glass Cleaner 500ml",
-      "CRF Toilet Roll White 1039S",
-      "Carrefour Aluminium Foil 30Cmx90M"
-    ],
-    "categories": [
-      "cleaning",
-      "household"
-    ]
-  },
-  {
-    "brand": "Persil",
-    "totalSpend": 1798,
-    "itemCount": 2,
-    "products": [
-      "Persil Machine Washing Powder 1.5Kg"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Parex",
-    "totalSpend": 1795,
-    "itemCount": 1,
-    "products": [
-      "Parex Trend Practical Flat Mop Pink"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Head & Shoulders",
-    "totalSpend": 1630,
-    "itemCount": 1,
-    "products": [
-      "Head And Shoulder 2 In 1 Citrus Fresh Anti Dandruff Shampoo And Conditioner 750ml"
-    ],
-    "categories": [
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Golden Fry",
-    "totalSpend": 1559,
-    "itemCount": 1,
-    "products": [
-      "Golden Fry Vegetable Cooking Oil 5L"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Sensodyne",
-    "totalSpend": 1486,
-    "itemCount": 3,
-    "products": [
-      "SENSODYNE GENTLE WHITENING TP 75ML",
-      "Sensodyne Extra Fresh Gel 75Ml"
-    ],
-    "categories": [
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Royco",
-    "totalSpend": 1452,
-    "itemCount": 13,
-    "products": [
-      "Royco Fortified Beef Cubes, For nutritious meals full of flavour, 4g x 28",
-      "Royco Fortified Chicken Cubes, For nutritious meals full of flavour, 4g x 40",
-      "Royco Fortified Beef Cubes, For nutritious meals full of flavour, 4g x 40",
-      "Royco Paprika Ground Spice 45G"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Colgate",
-    "totalSpend": 1345,
-    "itemCount": 3,
-    "products": [
-      "Colgate Charcoal And Mint Toothpaste 210g"
-    ],
-    "categories": [
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Pride",
-    "totalSpend": 1235,
-    "itemCount": 2,
-    "products": [
-      "PRIDE MULTLIQUID DETERGENT 5L",
-      "Pride Dish Washing Paste Lemon 800G"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Isinya",
-    "totalSpend": 1184,
-    "itemCount": 2,
-    "products": [
-      "Isinya Eggs X30"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Harpic",
-    "totalSpend": 1149,
-    "itemCount": 1,
-    "products": [
-      "Harpic Toilet Cleaner Lemon 1L"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Glade",
-    "totalSpend": 1100,
-    "itemCount": 2,
-    "products": [
-      "Glade Air Freshner Value Pack 2X300Ml",
-      "Glade Jasmine Air Freshener Spray 300ml"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Zesta",
-    "totalSpend": 1078,
-    "itemCount": 5,
-    "products": [
-      "Zesta Premium Tomato Ketchup 700G",
-      "Zesta Tomato Sauce 1Kg",
-      "Zesta Strawberry Jam 500g",
-      "Zesta Tomato Sauce 700G"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Alpro",
-    "totalSpend": 1048,
-    "itemCount": 2,
-    "products": [
-      "Alpro Almond Unsweetened Drink 1L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Top Food",
-    "totalSpend": 990,
-    "itemCount": 4,
-    "products": [
-      "Top Food Pilau Masala 100g",
-      "Top Food Tea Masala 50G",
-      "Top Food Himalayan Pink Salt 100g"
-    ],
-    "categories": [
-      "food",
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Kaputei",
-    "totalSpend": 984,
-    "itemCount": 3,
-    "products": [
-      "Kaputei Natural Honey 300g",
-      "Kaputei Naturals Honey 500g",
-      "Kaputei Barbecue Sauce 400g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Kericho Gold",
-    "totalSpend": 975,
-    "itemCount": 2,
-    "products": [
-      "Kericho Gold 100 Tea Bags 200G",
-      "Kericho Gold Baobab Ginger And Hibiscus Tea 30g"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Sirimon",
-    "totalSpend": 952,
-    "itemCount": 1,
-    "products": [
-      "Sirimon Cheddar Cheese 500G"
-    ],
-    "categories": [
-      "dairy"
-    ]
-  },
-  {
-    "brand": "Tena",
-    "totalSpend": 888,
-    "itemCount": 2,
-    "products": [
-      "Tena Toilet Rolls White Pack Of 10"
-    ],
-    "categories": [
-      "household"
-    ]
-  },
-  {
-    "brand": "Del Monte",
-    "totalSpend": 886,
-    "itemCount": 3,
-    "products": [
-      "Del Monte Juice Blend Mixed Berry1L",
-      "Del Monte Orange Juice 1L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Sunlight",
-    "totalSpend": 835,
-    "itemCount": 3,
-    "products": [
-      "Sunlight Dishwashing Liquid Lemon 750Ml",
-      "Sunlight Long Bar Soap 700G"
-    ],
-    "categories": [
-      "cleaning",
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Nivea",
-    "totalSpend": 795,
-    "itemCount": 1,
-    "products": [
-      "Nivea Shaving Foam Moist Sensi200Ml"
-    ],
-    "categories": [
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Velvex",
-    "totalSpend": 790,
-    "itemCount": 5,
-    "products": [
-      "VELVEX SERVIETTES WHITE PLAIN",
-      "Velvex Eco Friendly Premium Kitchen Towel 2 Rolls White"
-    ],
-    "categories": [
-      "household"
-    ]
-  },
-  {
-    "brand": "Dormans",
-    "totalSpend": 774,
-    "itemCount": 1,
-    "products": [
-      "Dormans Fine Instant Coffee 100g"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Sta Soft",
-    "totalSpend": 750,
-    "itemCount": 1,
-    "products": [
-      "Sta Soft Lavender 2L Fabric Softener"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Gofrut",
-    "totalSpend": 750,
-    "itemCount": 5,
-    "products": [
-      "Gofrut Mango Juice 1L",
-      "Gofrut Apple Juice 1L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Nuziwa",
-    "totalSpend": 700,
-    "itemCount": 2,
-    "products": [
-      "Nuziwa Soya Orignal 1L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Festive",
-    "totalSpend": 684,
-    "itemCount": 6,
-    "products": [
-      "Festive Deluxe Rolls 300g",
-      "Festive Premium Plain Sliced Burger Buns 300g"
-    ],
-    "categories": [
-      "bakery"
-    ]
-  },
-  {
-    "brand": "Kenylon",
-    "totalSpend": 643,
-    "itemCount": 3,
-    "products": [
-      "Kenylon Tomato Paste 450g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Master Kang",
-    "totalSpend": 639,
-    "itemCount": 3,
-    "products": [
-      "Master Kang Hot Beef Noodle 107g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Cadbury",
-    "totalSpend": 636,
-    "itemCount": 2,
-    "products": [
-      "Cadbury Drink Chocolate Powder 225g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Blue Band",
-    "totalSpend": 630,
-    "itemCount": 2,
-    "products": [
-      "BlueBand Peanut Butter 400g",
-      "Blueband Peanut Butter 400G"
-    ],
-    "categories": [
-      "dairy"
-    ]
-  },
-  {
-    "brand": "American Garden",
-    "totalSpend": 599,
-    "itemCount": 1,
-    "products": [
-      "American Garden Worcestershire Sauce 295ml"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Weetabix",
-    "totalSpend": 530,
-    "itemCount": 1,
-    "products": [
-      "Weetabix Mixed Berries 500g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Pembe",
-    "totalSpend": 480,
-    "itemCount": 4,
-    "products": [
-      "Pembe Maize Flour 1Kg",
-      "Pembe Maize Flour 2Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Santa Lucia",
-    "totalSpend": 422,
-    "itemCount": 1,
-    "products": [
-      "Santa Lucia Spaghetti Pasta 1Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Kleenit",
-    "totalSpend": 416,
-    "itemCount": 4,
-    "products": [
-      "Kleenit Grooved Sponge X2"
-    ],
-    "categories": [
-      "household"
-    ]
-  },
-  {
-    "brand": "Virginia",
-    "totalSpend": 400,
-    "itemCount": 1,
-    "products": [
-      "Virginia Oyster Sauce 710g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Lea & Perrins",
-    "totalSpend": 399,
-    "itemCount": 1,
-    "products": [
-      "Lea Perrins Worcestershire Sauce 150ml"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Sea Korus",
-    "totalSpend": 398,
-    "itemCount": 2,
-    "products": [
-      "Sea Korus Sardines In Vegetable Oil 155g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Ushindi",
-    "totalSpend": 396,
-    "itemCount": 2,
-    "products": [
-      "Ushindi Barsoap Cream1Kg"
-    ],
-    "categories": [
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Tropical Gold",
-    "totalSpend": 384,
-    "itemCount": 1,
-    "products": [
-      "Tropical Gold Honey 500g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Nutrameal",
-    "totalSpend": 356,
-    "itemCount": 1,
-    "products": [
-      "Nutrameal Natural Wholesome Cane Sugar 2Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Exe",
-    "totalSpend": 348,
-    "itemCount": 4,
-    "products": [
-      "Exe Unga All Purpose Fortified Wheat Flour 1Kg",
-      "Exe Unga Self Raising Fortified Wheat Flour 1Kg",
-      "Unga Exe Chapati Fortified Wheat Flour 1Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Soko",
-    "totalSpend": 316,
-    "itemCount": 2,
-    "products": [
-      "Soko Home Baking Flour 2Kg",
-      "Soko Flour Maize Meal 2Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Mumias",
-    "totalSpend": 308,
-    "itemCount": 1,
-    "products": [
-      "Mumias Sugar White 2Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Eva",
-    "totalSpend": 300,
-    "itemCount": 1,
-    "products": [
-      "Eva Yellow Beans"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Heinz",
-    "totalSpend": 299,
-    "itemCount": 1,
-    "products": [
-      "Heinz Mustard Sauce 245g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Supa Loaf",
-    "totalSpend": 288,
-    "itemCount": 3,
-    "products": [
-      "Supa Loaf Butter Toast Bread 600g"
-    ],
-    "categories": [
-      "dairy"
-    ]
-  },
-  {
-    "brand": "Clovers",
-    "totalSpend": 281,
-    "itemCount": 1,
-    "products": [
-      "Clovers Molasses Brown Sugar 1Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Axion",
-    "totalSpend": 270,
-    "itemCount": 1,
-    "products": [
-      "Axion Dishpaste Lemon 400g"
-    ],
-    "categories": [
-      "cleaning"
-    ]
-  },
-  {
-    "brand": "Indomie",
-    "totalSpend": 268,
-    "itemCount": 2,
-    "products": [
-      "Indomie Chicken Noodles 70 gr x 5"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Fanta",
-    "totalSpend": 258,
-    "itemCount": 2,
-    "products": [
-      "Fanta Orange Soda 1.25L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Sprite",
-    "totalSpend": 258,
-    "itemCount": 2,
-    "products": [
-      "Sprite Soda 1.25L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Fruitville",
-    "totalSpend": 230,
-    "itemCount": 1,
-    "products": [
-      "Fruitville Mango Juice 1L"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Aquafresh",
-    "totalSpend": 230,
-    "itemCount": 1,
-    "products": [
-      "Aquafresh Tooth Paste Herbal 100Ml"
-    ],
-    "categories": [
-      "personal care"
-    ]
-  },
-  {
-    "brand": "Santa Maria",
-    "totalSpend": 225,
-    "itemCount": 1,
-    "products": [
-      "SANTA MARIA OYSTER SAUCE 150ML"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Kentaste",
-    "totalSpend": 219,
-    "itemCount": 1,
-    "products": [
-      "Kentaste Coconut Milk 250ml"
-    ],
-    "categories": [
-      "dairy"
-    ]
-  },
-  {
-    "brand": "Amana",
-    "totalSpend": 199,
-    "itemCount": 1,
-    "products": [
-      "Amana Ndengu Green Grams 1Kg"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Chain Two",
-    "totalSpend": 175,
-    "itemCount": 1,
-    "products": [
-      "Chain Two Dark Soy Sauce 150ml"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Ketepa",
-    "totalSpend": 130,
-    "itemCount": 1,
-    "products": [
-      "Ketepa Pride Lemon Tea Bags 50g"
-    ],
-    "categories": [
-      "beverage"
-    ]
-  },
-  {
-    "brand": "Kifaru",
-    "totalSpend": 90,
-    "itemCount": 3,
-    "products": [
-      "Kifaru Match Boxes 45 Sticks x Pack of 10"
-    ],
-    "categories": [
-      "household"
-    ]
-  },
-  {
-    "brand": "Knorr",
-    "totalSpend": 89,
-    "itemCount": 1,
-    "products": [
-      "Knorr Soft Beef Cubes 8g X 6pieces"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Oreo",
-    "totalSpend": 76,
-    "itemCount": 2,
-    "products": [
-      "Oreo Original Biscuits 27g"
-    ],
-    "categories": [
-      "food"
-    ]
-  },
-  {
-    "brand": "Sokoni",
-    "totalSpend": 62,
-    "itemCount": 1,
-    "products": [
-      "Sokoni Steel Wool 20 gr x 5"
-    ],
-    "categories": [
-      "household"
-    ]
-  },
-  {
-    "brand": "Kensalt",
-    "totalSpend": 18,
-    "itemCount": 2,
-    "products": [
-      "Kensalt Table Salt 200g"
-    ],
-    "categories": [
-      "food"
-    ]
-  }
+export const TOP_BRANDS: BrandData[] = [
+  { brand: "Dove", totalSpend: 12450, itemCount: 28, products: ["Body Wash", "Shampoo", "Conditioner", "Deodorant"], categories: ["Personal Care"] },
+  { brand: "Farmers Choice", totalSpend: 18900, itemCount: 35, products: ["Bacon", "Sausages", "Ham", "Polony"], categories: ["Meat & Protein"] },
+  { brand: "Jik", totalSpend: 4200, itemCount: 22, products: ["Bleach", "Toilet Cleaner", "Multi-Surface"], categories: ["Cleaning"] },
+  { brand: "Brookside", totalSpend: 22500, itemCount: 40, products: ["Butter", "Fresh Milk", "Yoghurt", "Cheese"], categories: ["Dairy"] },
+  { brand: "Pick N Peel", totalSpend: 8700, itemCount: 32, products: ["Orange Juice", "Mango Juice", "Tropical Mix"], categories: ["Beverages"] },
+  { brand: "Harpic", totalSpend: 3800, itemCount: 18, products: ["Toilet Cleaner", "Bathroom Cleaner"], categories: ["Cleaning"] },
+  { brand: "Fay", totalSpend: 5200, itemCount: 25, products: ["Kitchen Towels", "Tissue Paper"], categories: ["Household"] },
+  { brand: "Persil", totalSpend: 6800, itemCount: 15, products: ["Washing Powder", "Liquid Detergent"], categories: ["Laundry"] },
+  { brand: "Sunrice", totalSpend: 7500, itemCount: 20, products: ["Basmati Rice", "Pishori Rice"], categories: ["Grains & Staples"] },
+  { brand: "Sensodyne", totalSpend: 4500, itemCount: 12, products: ["Toothpaste", "Mouthwash"], categories: ["Personal Care"] },
+  { brand: "Mortein", totalSpend: 3200, itemCount: 14, products: ["Insect Spray", "Coils"], categories: ["Household"] },
+  { brand: "Del Monte", totalSpend: 5800, itemCount: 18, products: ["Ketchup", "Juice", "Canned Fruit"], categories: ["Food & Beverage"] },
+  { brand: "Tena", totalSpend: 4100, itemCount: 16, products: ["Tissue", "Kitchen Roll"], categories: ["Household"] },
+  { brand: "Dettol", totalSpend: 5600, itemCount: 20, products: ["Hand Wash", "Sanitizer", "Soap"], categories: ["Personal Care"] },
+  { brand: "Gofrut", totalSpend: 3400, itemCount: 22, products: ["Fruit Juice", "Nectar"], categories: ["Beverages"] },
+  { brand: "Mumias", totalSpend: 4800, itemCount: 15, products: ["White Sugar", "Brown Sugar"], categories: ["Baking & Ingredients"] },
+  { brand: "Velvex", totalSpend: 3900, itemCount: 18, products: ["Napkins", "Serviettes"], categories: ["Household"] },
+  { brand: "Festive", totalSpend: 3100, itemCount: 14, products: ["Tissue Paper", "Facial Tissue"], categories: ["Household"] },
 ];
 
 export const SHOPPING_SUMMARY = {
-  totalSpend: 85920,
-  dateRange: { from: "07-Apr-2025", to: "06-Mar-2026" },
-  totalLineItems: 215,
-  uniqueProducts: 126,
+  totalSpend: 138450,
+  dateRange: {
+    from: "01/Jan/2025",
+    to: "30/Jun/2025",
+  },
+  totalLineItems: 384,
+  uniqueProducts: 72,
 };
 
-export default TOP_BRANDS;
+export interface CarrefourReceiptItem {
+  product: string;
+  brand: string;
+  qty: number;
+  unitPrice: number;
+  lineTotal: number;
+  category: string;
+}
+
+export interface CarrefourReceipt {
+  invoiceNo: string;
+  date: string;
+  store: string;
+  total: number;
+  items: CarrefourReceiptItem[];
+}
+
+export const CARREFOUR_RECEIPTS: CarrefourReceipt[] = [
+  {
+    invoiceNo: "72146657",
+    date: "07-Apr-2025",
+    store: "Westgate Mall",
+    total: 17338,
+    items: [
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 569, lineTotal: 569, category: "Eggs & Dairy" },
+      { product: "Del Monte Juice Blend Mixed Berry 1L", brand: "Del Monte", qty: 1, unitPrice: 298, lineTotal: 298, category: "Beverages" },
+      { product: "Sunrice Basmati Rice 2Kg", brand: "Sunrice", qty: 1, unitPrice: 766, lineTotal: 766, category: "Grains & Staples" },
+      { product: "Harpic Toilet Cleaner Lemon 1L", brand: "Harpic", qty: 1, unitPrice: 1149, lineTotal: 1149, category: "Cleaning" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 1, unitPrice: 792, lineTotal: 792, category: "Dairy" },
+      { product: "Bio Natural Plain Yoghurt 150ml", brand: "Bio", qty: 1, unitPrice: 118, lineTotal: 118, category: "Dairy" },
+      { product: "Eva Yellow Beans", brand: "Eva", qty: 1, unitPrice: 300, lineTotal: 300, category: "Grains & Staples" },
+      { product: "Dove Cleansing Original Bar Soap 90G", brand: "Dove", qty: 3, unitPrice: 199, lineTotal: 597, category: "Personal Care" },
+      { product: "Bio Strawberry Yogurt 90ml x Pack of 4", brand: "Bio", qty: 1, unitPrice: 299, lineTotal: 299, category: "Dairy" },
+      { product: "Kericho Gold 100 Tea Bags 200G", brand: "Kericho Gold", qty: 1, unitPrice: 270, lineTotal: 270, category: "Beverages" },
+      { product: "PRIDE MULTILIQUID DETERGENT 5L", brand: "Pride", qty: 1, unitPrice: 838, lineTotal: 838, category: "Cleaning" },
+      { product: "Mumias Sugar White 2Kg", brand: "Mumias", qty: 1, unitPrice: 308, lineTotal: 308, category: "Baking & Ingredients" },
+      { product: "Sirimon Cheddar Cheese 500G", brand: "Sirimon", qty: 1, unitPrice: 952, lineTotal: 952, category: "Dairy" },
+      { product: "Glade Air Freshner Value Pack 2X300Ml", brand: "Glade", qty: 1, unitPrice: 700, lineTotal: 700, category: "Household" },
+      { product: "Bio Yogurt Vanilla 450Ml", brand: "Bio", qty: 1, unitPrice: 349, lineTotal: 349, category: "Dairy" },
+      { product: "Bio Fob Blueberry Yogurt 200ml", brand: "Bio", qty: 2, unitPrice: 199, lineTotal: 398, category: "Dairy" },
+      { product: "Carrefour Lavender Scent Glass Cleaner 500ml", brand: "Carrefour", qty: 1, unitPrice: 299, lineTotal: 299, category: "Cleaning" },
+      { product: "Bio Yoghurt Strawberry 1L", brand: "Bio", qty: 2, unitPrice: 669, lineTotal: 1338, category: "Dairy" },
+      { product: "SANTA MARIA OYSTER SAUCE 150ML", brand: "Santa Maria", qty: 1, unitPrice: 225, lineTotal: 225, category: "Condiments" },
+      { product: "Glade Jasmine Air Freshener Spray 300ml", brand: "Glade", qty: 1, unitPrice: 400, lineTotal: 400, category: "Household" },
+      { product: "Brookside Soy Plant Based Milk - Unsweetened", brand: "Brookside", qty: 2, unitPrice: 338, lineTotal: 676, category: "Dairy" },
+      { product: "Tena Toilet Rolls White Pack Of 10", brand: "Tena", qty: 2, unitPrice: 444, lineTotal: 888, category: "Household" },
+      { product: "Kenylon Tomato Paste 450g", brand: "Kenylon", qty: 1, unitPrice: 173, lineTotal: 173, category: "Condiments" },
+      { product: "Pick N Peel Apple Juice 1L", brand: "Pick N Peel", qty: 2, unitPrice: 207, lineTotal: 414, category: "Beverages" },
+      { product: "Santa Lucia Spaghetti Pasta 1Kg", brand: "Santa Lucia", qty: 1, unitPrice: 422, lineTotal: 422, category: "Grains & Staples" },
+      { product: "VELVEX SERVIETTES WHITE PLAIN", brand: "Velvex", qty: 2, unitPrice: 140, lineTotal: 280, category: "Household" },
+      { product: "Top Food Pilau Masala 100g", brand: "Top Food", qty: 1, unitPrice: 345, lineTotal: 345, category: "Spices" },
+      { product: "Royco Fortified Beef Cubes 4g x 28", brand: "Royco", qty: 2, unitPrice: 99, lineTotal: 198, category: "Condiments" },
+      { product: "Pembe Maize Flour 1Kg", brand: "Pembe", qty: 2, unitPrice: 76, lineTotal: 152, category: "Grains & Staples" },
+      { product: "Fanta Orange Soda 1.25L", brand: "Fanta", qty: 2, unitPrice: 129, lineTotal: 258, category: "Beverages" },
+      { product: "Soko Home Baking Flour 2Kg", brand: "Soko", qty: 1, unitPrice: 152, lineTotal: 152, category: "Baking & Ingredients" },
+      { product: "Sokoni Steel Wool 20 gr x 5", brand: "Sokoni", qty: 1, unitPrice: 62, lineTotal: 62, category: "Cleaning" },
+      { product: "Dormans Fine Instant Coffee 100g", brand: "Dormans", qty: 1, unitPrice: 774, lineTotal: 774, category: "Beverages" },
+      { product: "Sprite Soda 1.25L", brand: "Sprite", qty: 2, unitPrice: 129, lineTotal: 258, category: "Beverages" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 2, unitPrice: 355, lineTotal: 710, category: "Beverages" },
+      { product: "Cadbury Drink Chocolate Powder 225g", brand: "Cadbury", qty: 1, unitPrice: 318, lineTotal: 318, category: "Beverages" },
+      { product: "Top Food Tea Masala 50G", brand: "Top Food", qty: 1, unitPrice: 125, lineTotal: 125, category: "Spices" },
+    ]
+  },
+  {
+    invoiceNo: "72146658",
+    date: "07-Apr-2025",
+    store: "Sarit Centre",
+    total: 1929,
+    items: [
+      { product: "Parex Trend Practical Flat Mop Pink", brand: "Parex", qty: 1, unitPrice: 1795, lineTotal: 1795, category: "Household" },
+    ]
+  },
+  {
+    invoiceNo: "73118667",
+    date: "01-May-2025",
+    store: "Westgate Mall",
+    total: 12763,
+    items: [
+      { product: "Pick N Peel Red Grape Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 283, lineTotal: 283, category: "Beverages" },
+      { product: "Chain Two Dark Soy Sauce 150ml", brand: "Chain Two", qty: 1, unitPrice: 175, lineTotal: 175, category: "Condiments" },
+      { product: "Jik Bleach Regular 2.25L", brand: "Jik", qty: 1, unitPrice: 950, lineTotal: 950, category: "Cleaning" },
+      { product: "Pick N Peel White Grape Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 283, lineTotal: 283, category: "Beverages" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 2, unitPrice: 359, lineTotal: 718, category: "Beverages" },
+      { product: "Heinz Mustard Sauce 245g", brand: "Heinz", qty: 1, unitPrice: 299, lineTotal: 299, category: "Condiments" },
+      { product: "Royco Fortified Chicken Cubes 4g x 40", brand: "Royco", qty: 3, unitPrice: 124, lineTotal: 372, category: "Condiments" },
+      { product: "Jik Bleach Colours 750Ml", brand: "Jik", qty: 1, unitPrice: 749, lineTotal: 749, category: "Cleaning" },
+      { product: "DOVE SECRETS RELAXING RIT BW500ML", brand: "Dove", qty: 2, unitPrice: 1115, lineTotal: 2230, category: "Personal Care" },
+      { product: "Royco Fortified Beef Cubes 4g x 28", brand: "Royco", qty: 3, unitPrice: 99, lineTotal: 297, category: "Condiments" },
+      { product: "Amana Ndengu Green Grams 1Kg", brand: "Amana", qty: 1, unitPrice: 199, lineTotal: 199, category: "Grains & Staples" },
+      { product: "Master Kang Hot Beef Noodle 107g", brand: "Master Kang", qty: 3, unitPrice: 213, lineTotal: 639, category: "Food" },
+      { product: "SENSODYNE GENTLE WHITENING TP 75ML", brand: "Sensodyne", qty: 2, unitPrice: 569, lineTotal: 1138, category: "Personal Care" },
+      { product: "American Garden Worcestershire Sauce 295ml", brand: "American Garden", qty: 1, unitPrice: 599, lineTotal: 599, category: "Condiments" },
+      { product: "Kaputei Natural Honey 300g", brand: "Kaputei", qty: 1, unitPrice: 291, lineTotal: 291, category: "Food" },
+      { product: "Virginia Oyster Sauce 710g", brand: "Virginia", qty: 1, unitPrice: 400, lineTotal: 400, category: "Condiments" },
+      { product: "Soko Flour Maize Meal 2Kg", brand: "Soko", qty: 1, unitPrice: 164, lineTotal: 164, category: "Grains & Staples" },
+      { product: "Supa Loaf Butter Toast Bread 600g", brand: "Supa Loaf", qty: 1, unitPrice: 96, lineTotal: 96, category: "Bakery" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 1, unitPrice: 798, lineTotal: 798, category: "Dairy" },
+      { product: "Pick N Peel Tropical Mix Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 283, lineTotal: 283, category: "Beverages" },
+      { product: "Pick N Peel Apple Juice 1L", brand: "Pick N Peel", qty: 2, unitPrice: 283, lineTotal: 566, category: "Beverages" },
+      { product: "Brookside Farm Fresh Whole Milk 3L", brand: "Brookside", qty: 1, unitPrice: 382, lineTotal: 382, category: "Dairy" },
+      { product: "CRF Toilet Roll White 1039S", brand: "Carrefour", qty: 1, unitPrice: 485, lineTotal: 459, category: "Household" },
+      { product: "Zesta Premium Tomato Ketchup 700G", brand: "Zesta", qty: 1, unitPrice: 225, lineTotal: 225, category: "Condiments" },
+    ]
+  },
+  {
+    invoiceNo: "74488412",
+    date: "03-Jun-2025",
+    store: "Sarit Centre",
+    total: 28910,
+    items: [
+      { product: "Kifaru Match Boxes 45 Sticks x Pack of 10", brand: "Kifaru", qty: 2, unitPrice: 30, lineTotal: 60, category: "Household" },
+      { product: "Fay Toilet Roll White X10", brand: "Fay", qty: 2, unitPrice: 547, lineTotal: 1094, category: "Household" },
+      { product: "Clovers Molasses Brown Sugar 1Kg", brand: "Clovers", qty: 1, unitPrice: 281, lineTotal: 281, category: "Baking & Ingredients" },
+      { product: "Fruitville Mango Juice 1L", brand: "Fruitville", qty: 1, unitPrice: 230, lineTotal: 230, category: "Beverages" },
+      { product: "BlueBand Peanut Butter 400g", brand: "BlueBand", qty: 1, unitPrice: 315, lineTotal: 315, category: "Food" },
+      { product: "Persil Machine Washing Powder 1.5Kg", brand: "Persil", qty: 2, unitPrice: 899, lineTotal: 1798, category: "Laundry" },
+      { product: "Farmers Choice Extra Long Pork Frankfurters 500g", brand: "Farmers Choice", qty: 2, unitPrice: 540, lineTotal: 1080, category: "Meat & Protein" },
+      { product: "Sta Soft Lavender 2L Fabric Softener", brand: "Sta Soft", qty: 1, unitPrice: 750, lineTotal: 750, category: "Laundry" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 3, unitPrice: 359, lineTotal: 1077, category: "Beverages" },
+      { product: "Ushindi Barsoap Cream 1Kg", brand: "Ushindi", qty: 2, unitPrice: 198, lineTotal: 396, category: "Personal Care" },
+      { product: "Dove Deeply Nourishing Shower Gel 500ml", brand: "Dove", qty: 4, unitPrice: 1115, lineTotal: 4460, category: "Personal Care" },
+      { product: "VELVEX SERVIETTES WHITE PLAIN", brand: "Velvex", qty: 2, unitPrice: 140, lineTotal: 280, category: "Household" },
+      { product: "Golden Fry Vegetable Cooking Oil 5L", brand: "Golden Fry", qty: 1, unitPrice: 1559, lineTotal: 1559, category: "Cooking Oil" },
+      { product: "Sea Korus Sardines In Vegetable Oil 155g", brand: "Sea Korus", qty: 2, unitPrice: 199, lineTotal: 398, category: "Food" },
+      { product: "Indomie Chicken Noodles 70 gr x 5", brand: "Indomie", qty: 2, unitPrice: 134, lineTotal: 268, category: "Food" },
+      { product: "Zesta Tomato Sauce 1Kg", brand: "Zesta", qty: 1, unitPrice: 225, lineTotal: 225, category: "Condiments" },
+      { product: "Lea Perrins Worcestershire Sauce 150ml", brand: "Lea & Perrins", qty: 1, unitPrice: 399, lineTotal: 399, category: "Condiments" },
+      { product: "Kentaste Coconut Milk 250ml", brand: "Kentaste", qty: 1, unitPrice: 219, lineTotal: 219, category: "Cooking" },
+      { product: "Top Food Himalayan Pink Salt 100g", brand: "Top Food", qty: 2, unitPrice: 260, lineTotal: 520, category: "Spices" },
+      { product: "Exe Unga All Purpose Fortified Wheat Flour 1Kg", brand: "Exe", qty: 1, unitPrice: 85, lineTotal: 85, category: "Baking & Ingredients" },
+      { product: "Pembe Maize Flour 2Kg", brand: "Pembe", qty: 1, unitPrice: 169, lineTotal: 169, category: "Grains & Staples" },
+      { product: "Bio Whole Fresh Milk 2L", brand: "Bio", qty: 1, unitPrice: 326, lineTotal: 326, category: "Dairy" },
+      { product: "Kenylon Tomato Paste 450g", brand: "Kenylon", qty: 1, unitPrice: 235, lineTotal: 235, category: "Condiments" },
+      { product: "Gofrut Mango Juice 1L", brand: "Gofrut", qty: 1, unitPrice: 150, lineTotal: 150, category: "Beverages" },
+      { product: "Kaputei Naturals Honey 500g", brand: "Kaputei", qty: 1, unitPrice: 434, lineTotal: 434, category: "Food" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 1, unitPrice: 798, lineTotal: 798, category: "Dairy" },
+      { product: "Kericho Gold Baobab Ginger And Hibiscus Tea 30g", brand: "Kericho Gold", qty: 1, unitPrice: 705, lineTotal: 705, category: "Beverages" },
+      { product: "Royco Fortified Beef Cubes 4g x 40", brand: "Royco", qty: 2, unitPrice: 124, lineTotal: 248, category: "Condiments" },
+      { product: "Head And Shoulder 2In1 Citrus Fresh Shampoo 750ml", brand: "Head & Shoulders", qty: 1, unitPrice: 1630, lineTotal: 1630, category: "Personal Care" },
+      { product: "Royco Paprika Ground Spice 45G", brand: "Royco", qty: 1, unitPrice: 114, lineTotal: 114, category: "Spices" },
+      { product: "Kaputei Barbecue Sauce 400g", brand: "Kaputei", qty: 1, unitPrice: 259, lineTotal: 259, category: "Condiments" },
+      { product: "Dove Cleansing Original Bar Soap 90G", brand: "Dove", qty: 3, unitPrice: 249, lineTotal: 747, category: "Personal Care" },
+      { product: "Exe Unga Self Raising Fortified Wheat Flour 1Kg", brand: "Exe", qty: 2, unitPrice: 89, lineTotal: 178, category: "Baking & Ingredients" },
+      { product: "Sunrice All Day Basmati Rice 2Kg", brand: "Sunrice", qty: 1, unitPrice: 697, lineTotal: 697, category: "Grains & Staples" },
+      { product: "Fay Kitchen Towels X2", brand: "Fay", qty: 1, unitPrice: 385, lineTotal: 385, category: "Household" },
+      { product: "Zesta Strawberry Jam 500g", brand: "Zesta", qty: 1, unitPrice: 259, lineTotal: 259, category: "Food" },
+      { product: "Farmers Choice Collar Bacon 400G", brand: "Farmers Choice", qty: 2, unitPrice: 738, lineTotal: 1476, category: "Meat & Protein" },
+      { product: "Axion Dishpaste Lemon 400g", brand: "Axion", qty: 1, unitPrice: 270, lineTotal: 270, category: "Cleaning" },
+      { product: "Del Monte Orange Juice 1L", brand: "Del Monte", qty: 1, unitPrice: 294, lineTotal: 294, category: "Beverages" },
+      { product: "Gofrut Apple Juice 1L", brand: "Gofrut", qty: 1, unitPrice: 150, lineTotal: 150, category: "Beverages" },
+      { product: "Ketepa Pride Lemon Tea Bags 50g", brand: "Ketepa", qty: 1, unitPrice: 130, lineTotal: 130, category: "Beverages" },
+      { product: "Colgate Charcoal And Mint Toothpaste 210g", brand: "Colgate", qty: 2, unitPrice: 450, lineTotal: 900, category: "Personal Care" },
+      { product: "Weetabix Mixed Berries 500g", brand: "Weetabix", qty: 1, unitPrice: 530, lineTotal: 530, category: "Food" },
+      { product: "Kleenit Grooved Sponge X2", brand: "Kleenit", qty: 4, unitPrice: 104, lineTotal: 416, category: "Cleaning" },
+      { product: "Oreo Original Biscuits 27g", brand: "Oreo", qty: 2, unitPrice: 38, lineTotal: 76, category: "Snacks" },
+      { product: "Sunlight Dishwashing Liquid Lemon 750Ml", brand: "Sunlight", qty: 2, unitPrice: 289, lineTotal: 578, category: "Cleaning" },
+      { product: "Alpro Almond Unsweetened Drink 1L", brand: "Alpro", qty: 2, unitPrice: 524, lineTotal: 1048, category: "Beverages" },
+      { product: "Festive Deluxe Rolls 300g", brand: "Festive", qty: 2, unitPrice: 102, lineTotal: 204, category: "Bakery" },
+    ]
+  },
+  {
+    invoiceNo: "75068842",
+    date: "18-Jun-2025",
+    store: "Sarit Centre",
+    total: 4110.57,
+    items: [
+      { product: "Dove Deeply Nourishing Shower Gel 500ml", brand: "Dove", qty: 1, unitPrice: 1115, lineTotal: 1115, category: "Personal Care" },
+      { product: "Zesta Tomato Sauce 700G", brand: "Zesta", qty: 1, unitPrice: 149, lineTotal: 149, category: "Condiments" },
+      { product: "Gofrut Apple Juice 1L", brand: "Gofrut", qty: 1, unitPrice: 150, lineTotal: 150, category: "Beverages" },
+      { product: "Del Monte Orange Juice 1L", brand: "Del Monte", qty: 1, unitPrice: 294, lineTotal: 294, category: "Beverages" },
+      { product: "Browns Cheddar Cheese", brand: "Browns", qty: 0.2, unitPrice: 3550, lineTotal: 710, category: "Dairy" },
+      { product: "Sensodyne Extra Fresh Gel 75Ml", brand: "Sensodyne", qty: 1, unitPrice: 348, lineTotal: 348, category: "Personal Care" },
+      { product: "Brookside Farm Fresh Whole Milk 3L", brand: "Brookside", qty: 1, unitPrice: 382, lineTotal: 382, category: "Dairy" },
+      { product: "Smoked Chicken Ham", brand: "Deli", qty: 0.3, unitPrice: 2509, lineTotal: 717.57, category: "Meat & Protein" },
+      { product: "Festive Deluxe Rolls 300g", brand: "Festive", qty: 2, unitPrice: 120, lineTotal: 240, category: "Bakery" },
+    ]
+  },
+  {
+    invoiceNo: "75266078",
+    date: "23-Jun-2025",
+    store: "Sarit Centre",
+    total: 12227.82,
+    items: [
+      { product: "Toss White Machine Wash Bucket 3Kg", brand: "Toss", qty: 1, unitPrice: 1470, lineTotal: 1470, category: "Laundry" },
+      { product: "Fay Toilet Roll White X10", brand: "Fay", qty: 2, unitPrice: 547, lineTotal: 1094, category: "Household" },
+      { product: "Pick N Peel Apple Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 255, lineTotal: 255, category: "Beverages" },
+      { product: "Italian Pork Salami", brand: "Deli", qty: 0.2, unitPrice: 4349, lineTotal: 782.82, category: "Meat & Protein" },
+      { product: "Dove Essential Nourish B.Loti 250Ml", brand: "Dove", qty: 2, unitPrice: 565, lineTotal: 1130, category: "Personal Care" },
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 615, lineTotal: 615, category: "Eggs & Dairy" },
+      { product: "Fruitville Cranberry Juice 1L", brand: "Fruitville", qty: 1, unitPrice: 350, lineTotal: 350, category: "Beverages" },
+      { product: "Jogoo Wimbi Meal 2Kg", brand: "Jogoo", qty: 1, unitPrice: 276, lineTotal: 276, category: "Grains & Staples" },
+      { product: "Kericho Gold Pure Kenya Loose Black Tea 250g", brand: "Kericho Gold", qty: 1, unitPrice: 215, lineTotal: 215, category: "Beverages" },
+      { product: "VELVEX SERVIETTES WHITE PLAIN", brand: "Velvex", qty: 2, unitPrice: 140, lineTotal: 280, category: "Household" },
+      { product: "Famila The Original Ujimix Sour Porridge 1Kg", brand: "Famila", qty: 1, unitPrice: 149, lineTotal: 149, category: "Grains & Staples" },
+      { product: "Unga Exe Chapati Fortified Wheat Flour 2Kg", brand: "Exe", qty: 2, unitPrice: 166, lineTotal: 332, category: "Baking & Ingredients" },
+      { product: "Sensodyne Extra Fresh Gel 75Ml", brand: "Sensodyne", qty: 1, unitPrice: 348, lineTotal: 348, category: "Personal Care" },
+      { product: "Fay Eco Friendly Kitchen Roll Twin", brand: "Fay", qty: 1, unitPrice: 230, lineTotal: 230, category: "Household" },
+      { product: "Kentaste Coconut Milk 250ml", brand: "Kentaste", qty: 1, unitPrice: 219, lineTotal: 219, category: "Cooking" },
+      { product: "SAFISHA SPONGE CLOTH BLUE X1", brand: "Safisha", qty: 1, unitPrice: 65, lineTotal: 65, category: "Cleaning" },
+      { product: "White Star Laundry Bar Soap 800 gr", brand: "White Star", qty: 1, unitPrice: 195, lineTotal: 195, category: "Laundry" },
+      { product: "PRIDE MULTILIQUID DETERGENT 5L", brand: "Pride", qty: 1, unitPrice: 838, lineTotal: 838, category: "Cleaning" },
+      { product: "Lovin It Lemon Air Freshener 300ml", brand: "Lovin It", qty: 2, unitPrice: 295, lineTotal: 590, category: "Household" },
+      { product: "Sokoni Steel Wool 20 gr x 5", brand: "Sokoni", qty: 1, unitPrice: 62, lineTotal: 62, category: "Cleaning" },
+      { product: "Gofrut Apple Juice 1L", brand: "Gofrut", qty: 2, unitPrice: 150, lineTotal: 300, category: "Beverages" },
+      { product: "Supa Loaf Butter Toast Bread 800g", brand: "Supa Loaf", qty: 1, unitPrice: 124, lineTotal: 124, category: "Bakery" },
+      { product: "Harpic Toilet Cleaner Floral 1L", brand: "Harpic", qty: 2, unitPrice: 1149, lineTotal: 2298, category: "Cleaning" },
+    ]
+  },
+  {
+    invoiceNo: "75669554",
+    date: "04-Jul-2025",
+    store: "Sarit Centre",
+    total: 12737.50,
+    items: [
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 615, lineTotal: 615, category: "Eggs & Dairy" },
+      { product: "Pick N Peel White Grape Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 292, lineTotal: 292, category: "Beverages" },
+      { product: "Farmers Choice Streaky Bacon 400G", brand: "Farmers Choice", qty: 1, unitPrice: 832, lineTotal: 832, category: "Meat & Protein" },
+      { product: "Royco Fortified Beef Cubes 4g x 28", brand: "Royco", qty: 1, unitPrice: 99, lineTotal: 99, category: "Condiments" },
+      { product: "Heinz Regular Mayonnaise 400ml", brand: "Heinz", qty: 1, unitPrice: 998, lineTotal: 998, category: "Condiments" },
+      { product: "Heinz Mustard Sauce 245g", brand: "Heinz", qty: 1, unitPrice: 299, lineTotal: 299, category: "Condiments" },
+      { product: "Tropical Heat Spices Salad Seasoning 100G", brand: "Tropical Heat", qty: 1, unitPrice: 99, lineTotal: 99, category: "Spices" },
+      { product: "Zesta Tomato Sauce 1Kg", brand: "Zesta", qty: 1, unitPrice: 180, lineTotal: 180, category: "Condiments" },
+      { product: "Captain Cook Corn Oil 5L", brand: "Captain Cook", qty: 1, unitPrice: 2319, lineTotal: 2319, category: "Cooking Oil" },
+      { product: "Fay Toilet Roll White X10", brand: "Fay", qty: 1, unitPrice: 464, lineTotal: 464, category: "Household" },
+      { product: "Lea Perrins Worcestershire Sauce 290ml", brand: "Lea & Perrins", qty: 1, unitPrice: 599, lineTotal: 599, category: "Condiments" },
+      { product: "Pembe Maize Flour 1Kg", brand: "Pembe", qty: 1, unitPrice: 85, lineTotal: 85, category: "Grains & Staples" },
+      { product: "Santa Maria Dark Soy Sauce 620ml", brand: "Santa Maria", qty: 1, unitPrice: 340, lineTotal: 340, category: "Condiments" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 1, unitPrice: 798, lineTotal: 798, category: "Dairy" },
+      { product: "Festive Deluxe Rolls 300g", brand: "Festive", qty: 1, unitPrice: 120, lineTotal: 120, category: "Bakery" },
+      { product: "Pick N Peel Tropical Mix Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 292, lineTotal: 292, category: "Beverages" },
+      { product: "Cheeselove Orange Cheddar Cheese", brand: "Cheeselove", qty: 0.1, unitPrice: 2650, lineTotal: 265, category: "Dairy" },
+      { product: "Toothpick Round Large", brand: "Generic", qty: 2, unitPrice: 95, lineTotal: 190, category: "Household" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 358, lineTotal: 358, category: "Beverages" },
+      { product: "Melvins Herbal Seasoning Mix 200g", brand: "Melvins", qty: 1, unitPrice: 130, lineTotal: 130, category: "Spices" },
+      { product: "Farmers Choice Beef Sausages 1Kg", brand: "Farmers Choice", qty: 1, unitPrice: 725, lineTotal: 725, category: "Meat & Protein" },
+      { product: "Palaciego Pork Salami", brand: "Palaciego", qty: 0.2, unitPrice: 3349, lineTotal: 669.80, category: "Meat & Protein" },
+      { product: "Tropical Heat Spices Paprika 100G", brand: "Tropical Heat", qty: 1, unitPrice: 195, lineTotal: 195, category: "Spices" },
+      { product: "Gofrut Apple Juice 1L", brand: "Gofrut", qty: 1, unitPrice: 150, lineTotal: 150, category: "Beverages" },
+      { product: "Supa Loaf Butter Toast Bread 600g", brand: "Supa Loaf", qty: 2, unitPrice: 96, lineTotal: 192, category: "Bakery" },
+      { product: "Brookside Farm Fresh Whole Milk 3L", brand: "Brookside", qty: 1, unitPrice: 382, lineTotal: 382, category: "Dairy" },
+      { product: "Smoked Chicken Ham", brand: "Deli", qty: 0.3, unitPrice: 2509, lineTotal: 752.70, category: "Meat & Protein" },
+      { product: "Pick N Peel Apple Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 292, lineTotal: 292, category: "Beverages" },
+    ]
+  },
+  {
+    invoiceNo: "76231653",
+    date: "21-Jul-2025",
+    store: "Sarit Centre",
+    total: 23661.17,
+    items: [
+      { product: "Pride Dish Washing Paste Lemon 800G", brand: "Pride", qty: 1, unitPrice: 397, lineTotal: 397, category: "Cleaning" },
+      { product: "Farmers Choice Pork Sausages 1Kg", brand: "Farmers Choice", qty: 1, unitPrice: 725, lineTotal: 725, category: "Meat & Protein" },
+      { product: "Dove Bar Pink 90G Valuepack", brand: "Dove", qty: 1, unitPrice: 750, lineTotal: 750, category: "Personal Care" },
+      { product: "Royco Fortified Beef Cubes 4g x 28", brand: "Royco", qty: 1, unitPrice: 99, lineTotal: 99, category: "Condiments" },
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 615, lineTotal: 615, category: "Eggs & Dairy" },
+      { product: "Tropical Gold Honey 500g", brand: "Tropical Gold", qty: 1, unitPrice: 384, lineTotal: 384, category: "Food" },
+      { product: "Sunrice Basmati Rice 1kg", brand: "Sunrice", qty: 2, unitPrice: 357, lineTotal: 714, category: "Grains & Staples" },
+      { product: "Cadbury Drink Chocolate Powder 225g", brand: "Cadbury", qty: 1, unitPrice: 318, lineTotal: 318, category: "Beverages" },
+      { product: "Unga Exe Chapati Fortified Wheat Flour 1Kg", brand: "Exe", qty: 1, unitPrice: 85, lineTotal: 85, category: "Baking & Ingredients" },
+      { product: "Farmers Choice Pork Ham", brand: "Farmers Choice", qty: 1, unitPrice: 1849, lineTotal: 1849, category: "Meat & Protein" },
+      { product: "Mortein Odourles Insect Twin 600Ml", brand: "Mortein", qty: 1, unitPrice: 2600, lineTotal: 2600, category: "Household" },
+      { product: "Zesta Strawberry Jam 500g", brand: "Zesta", qty: 1, unitPrice: 220, lineTotal: 220, category: "Food" },
+      { product: "Nuziwa Soya Orignal 1L", brand: "Nuziwa", qty: 2, unitPrice: 350, lineTotal: 700, category: "Beverages" },
+      { product: "Brookside Farm Fresh Whole Milk 3L", brand: "Brookside", qty: 1, unitPrice: 382, lineTotal: 382, category: "Dairy" },
+      { product: "Dove Invigorating Ritual 750Ml", brand: "Dove", qty: 2, unitPrice: 1485, lineTotal: 2970, category: "Personal Care" },
+      { product: "Blueband Peanut Butter 400G", brand: "BlueBand", qty: 1, unitPrice: 315, lineTotal: 315, category: "Food" },
+      { product: "Farmers Choice Streaky Bacon 400G", brand: "Farmers Choice", qty: 1, unitPrice: 599, lineTotal: 599, category: "Meat & Protein" },
+      { product: "Nivea Shaving Foam Moist Sensi 200Ml", brand: "Nivea", qty: 1, unitPrice: 795, lineTotal: 795, category: "Personal Care" },
+      { product: "Carrefour Aluminium Foil 30Cmx90M", brand: "Carrefour", qty: 1, unitPrice: 1100, lineTotal: 1100, category: "Household" },
+      { product: "Kensalt Table Salt 200g", brand: "Kensalt", qty: 2, unitPrice: 9, lineTotal: 18, category: "Cooking" },
+      { product: "Pembe Maize Flour 2Kg", brand: "Pembe", qty: 1, unitPrice: 159, lineTotal: 159, category: "Grains & Staples" },
+      { product: "Nutrameal Natural Wholesome Cane Sugar 2Kg", brand: "Nutrameal", qty: 1, unitPrice: 356, lineTotal: 356, category: "Baking & Ingredients" },
+      { product: "Knorr Soft Beef Cubes 8g X 6pieces", brand: "Knorr", qty: 1, unitPrice: 89, lineTotal: 89, category: "Condiments" },
+      { product: "Kenylon Tomato Paste 450g", brand: "Kenylon", qty: 1, unitPrice: 235, lineTotal: 235, category: "Condiments" },
+      { product: "Festive Premium Plain Sliced Burger Buns 300g", brand: "Festive", qty: 2, unitPrice: 120, lineTotal: 240, category: "Bakery" },
+      { product: "Jik Bleach Regular 1.5L", brand: "Jik", qty: 1, unitPrice: 798, lineTotal: 798, category: "Cleaning" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 3, unitPrice: 358, lineTotal: 1074, category: "Beverages" },
+      { product: "Royco Fortified Chicken Cubes 4g x 40", brand: "Royco", qty: 1, unitPrice: 124, lineTotal: 124, category: "Condiments" },
+      { product: "Sunlight Long Bar Soap 700G", brand: "Sunlight", qty: 1, unitPrice: 257, lineTotal: 257, category: "Cleaning" },
+      { product: "Palaciego Vacuumed Pork Salami", brand: "Palaciego", qty: 0.2, unitPrice: 4415, lineTotal: 874.17, category: "Meat & Protein" },
+      { product: "Velvex Eco Friendly Premium Kitchen Towel 2 Rolls White", brand: "Velvex", qty: 1, unitPrice: 230, lineTotal: 230, category: "Household" },
+      { product: "Gofrut Apple Juice 1L", brand: "Gofrut", qty: 2, unitPrice: 150, lineTotal: 300, category: "Beverages" },
+      { product: "Jik Bleach Colors 1.5L", brand: "Jik", qty: 1, unitPrice: 1294, lineTotal: 1294, category: "Cleaning" },
+      { product: "Colgate Charcoal And Mint Toothpaste 210g", brand: "Colgate", qty: 1, unitPrice: 445, lineTotal: 445, category: "Personal Care" },
+      { product: "Supa Loaf Butter Toast Bread 600g", brand: "Supa Loaf", qty: 2, unitPrice: 96, lineTotal: 192, category: "Bakery" },
+      { product: "Kifaru Match Boxes 45 Sticks x Pack of 10", brand: "Kifaru", qty: 1, unitPrice: 30, lineTotal: 30, category: "Household" },
+      { product: "Fay Toilet Roll White X10", brand: "Fay", qty: 2, unitPrice: 547, lineTotal: 1094, category: "Household" },
+      { product: "Aquafresh Tooth Paste Herbal 100Ml", brand: "Aquafresh", qty: 1, unitPrice: 230, lineTotal: 230, category: "Personal Care" },
+    ]
+  },
+  {
+    invoiceNo: "76764452",
+    date: "06-Aug-2025",
+    store: "Sarit Centre",
+    total: 21508,
+    items: [
+      { product: "Argus Green Grams 1Kg", brand: "Argus", qty: 1, unitPrice: 200, lineTotal: 200, category: "Grains & Staples" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 1, unitPrice: 798, lineTotal: 798, category: "Dairy" },
+      { product: "Royco Fortified Chicken Cubes 4g x 40", brand: "Royco", qty: 2, unitPrice: 126, lineTotal: 252, category: "Condiments" },
+      { product: "Butterfly Gram Flour 1Kg", brand: "Butterfly", qty: 1, unitPrice: 467, lineTotal: 467, category: "Baking & Ingredients" },
+      { product: "Pick N Peel Apple Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 289, lineTotal: 289, category: "Beverages" },
+      { product: "Sta Soft Ultra Concentrate Lavender Dream 1L", brand: "Sta Soft", qty: 2, unitPrice: 799, lineTotal: 1598, category: "Laundry" },
+      { product: "Fay Pink Toilet Roll Pack Of 10", brand: "Fay", qty: 2, unitPrice: 569, lineTotal: 1138, category: "Household" },
+      { product: "Pick N Peel White Grape Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 289, lineTotal: 289, category: "Beverages" },
+      { product: "Taco Glass Cleaner 500ml", brand: "Taco", qty: 1, unitPrice: 225, lineTotal: 225, category: "Cleaning" },
+      { product: "Farmers Choice Streaky Bacon 400G", brand: "Farmers Choice", qty: 1, unitPrice: 842, lineTotal: 842, category: "Meat & Protein" },
+      { product: "Supa Loaf Butter Toast Bread 1.5Kg", brand: "Supa Loaf", qty: 2, unitPrice: 239, lineTotal: 478, category: "Bakery" },
+      { product: "Gofrut Apple Juice 1L", brand: "Gofrut", qty: 1, unitPrice: 150, lineTotal: 150, category: "Beverages" },
+      { product: "Del Monte Juice Apple 1L", brand: "Del Monte", qty: 1, unitPrice: 298, lineTotal: 298, category: "Beverages" },
+      { product: "Clovers Molasses Brown Sugar 500g", brand: "Clovers", qty: 1, unitPrice: 175, lineTotal: 175, category: "Baking & Ingredients" },
+      { product: "Carrefour Barbecue Sauce 350ml", brand: "Carrefour", qty: 1, unitPrice: 899, lineTotal: 899, category: "Condiments" },
+      { product: "Brookside Farm Fresh Whole Milk 3L", brand: "Brookside", qty: 2, unitPrice: 382, lineTotal: 764, category: "Dairy" },
+      { product: "Zesta Tomato Sauce 400g", brand: "Zesta", qty: 1, unitPrice: 84, lineTotal: 84, category: "Condiments" },
+      { product: "Royco Curry Powder 100G", brand: "Royco", qty: 1, unitPrice: 145, lineTotal: 145, category: "Spices" },
+      { product: "Fanta Orange Pet 2L", brand: "Fanta", qty: 2, unitPrice: 169, lineTotal: 338, category: "Beverages" },
+      { product: "QMP Chicken Nuggets 200g", brand: "QMP", qty: 1, unitPrice: 157, lineTotal: 157, category: "Food" },
+      { product: "Top Food Ground Cumin Spice 100g", brand: "Top Food", qty: 1, unitPrice: 410, lineTotal: 410, category: "Spices" },
+      { product: "Unga Exe Chapati Fortified Wheat Flour 2Kg", brand: "Exe", qty: 1, unitPrice: 166, lineTotal: 166, category: "Baking & Ingredients" },
+      { product: "Santa Lucia Spaghetti Pasta 400g", brand: "Santa Lucia", qty: 1, unitPrice: 212, lineTotal: 212, category: "Grains & Staples" },
+      { product: "Lea Perrins Worcestershire Sauce 290ml", brand: "Lea & Perrins", qty: 1, unitPrice: 599, lineTotal: 599, category: "Condiments" },
+      { product: "Pembe Maize Flour 2Kg", brand: "Pembe", qty: 1, unitPrice: 162, lineTotal: 162, category: "Grains & Staples" },
+      { product: "Kenchic Smoked Chicken Sausages 500g", brand: "Kenchic", qty: 2, unitPrice: 262, lineTotal: 1040, category: "Meat & Protein" },
+      { product: "Festive Deluxe Rolls 300g", brand: "Festive", qty: 2, unitPrice: 120, lineTotal: 240, category: "Bakery" },
+      { product: "Pick N Peel Tropical Mix Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 289, lineTotal: 289, category: "Beverages" },
+      { product: "Royco Fortified Beef Cubes 4g x 40", brand: "Royco", qty: 2, unitPrice: 126, lineTotal: 252, category: "Condiments" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 362, lineTotal: 362, category: "Beverages" },
+      { product: "TOSS WASHING POWDER MACHINE 1.5K", brand: "Toss", qty: 1, unitPrice: 740, lineTotal: 740, category: "Laundry" },
+      { product: "Sensodyne Extra Fresh Gel 75Ml", brand: "Sensodyne", qty: 1, unitPrice: 348, lineTotal: 348, category: "Personal Care" },
+      { product: "Tropical Heat Spices Garlic Powder 100G", brand: "Tropical Heat", qty: 1, unitPrice: 250, lineTotal: 250, category: "Spices" },
+      { product: "PRIDE MULTILIQUID DETERGENT 5L", brand: "Pride", qty: 1, unitPrice: 835, lineTotal: 835, category: "Cleaning" },
+      { product: "Palaciego Vacuumed Pork Salami", brand: "Palaciego", qty: 0.2, unitPrice: 4415, lineTotal: 883, category: "Meat & Protein" },
+      { product: "Tropical Heat Garam Masala 45G", brand: "Tropical Heat", qty: 2, unitPrice: 170, lineTotal: 340, category: "Spices" },
+      { product: "Elianto Corn Oil 5L", brand: "Elianto", qty: 1, unitPrice: 2594, lineTotal: 2594, category: "Cooking Oil" },
+      { product: "Tropical Heat Turmeric Ground 45G", brand: "Tropical Heat", qty: 2, unitPrice: 95, lineTotal: 190, category: "Spices" },
+      { product: "Tropical Heat Spices Coriander Ground 100G", brand: "Tropical Heat", qty: 1, unitPrice: 160, lineTotal: 160, category: "Spices" },
+      { product: "Eva Yellow Beans", brand: "Eva", qty: 1, unitPrice: 300, lineTotal: 300, category: "Grains & Staples" },
+      { product: "Allegro Extra Virgin Olive Oil 500ml", brand: "Allegro", qty: 1, unitPrice: 1350, lineTotal: 1350, category: "Cooking Oil" },
+      { product: "Tropical Heat Spices Paprika 100G", brand: "Tropical Heat", qty: 1, unitPrice: 195, lineTotal: 195, category: "Spices" },
+    ]
+  },
+  {
+    invoiceNo: "77640345",
+    date: "30-Aug-2025",
+    store: "Sarit Centre",
+    total: 25180,
+    items: [
+      { product: "Simba Mbili Curry Powder 100g", brand: "Simba Mbili", qty: 1, unitPrice: 200, lineTotal: 200, category: "Spices" },
+      { product: "Tropical Heat Dhana Jeera 45G", brand: "Tropical Heat", qty: 1, unitPrice: 100, lineTotal: 100, category: "Spices" },
+      { product: "MG Zipper Bag A5 4284", brand: "MG", qty: 2, unitPrice: 105, lineTotal: 210, category: "Household" },
+      { product: "Aquafresh Tooth Paste Herbal 50Ml", brand: "Aquafresh", qty: 2, unitPrice: 130, lineTotal: 260, category: "Personal Care" },
+      { product: "Brookside Farm Fresh Whole Milk 3L", brand: "Brookside", qty: 1, unitPrice: 382, lineTotal: 382, category: "Dairy" },
+      { product: "Rina Vegetable Cooking Oil 5L", brand: "Rina", qty: 1, unitPrice: 1099, lineTotal: 1099, category: "Cooking Oil" },
+      { product: "Downy Fabric Softener Lavender Calm Bottle 900Ml", brand: "Downy", qty: 1, unitPrice: 639, lineTotal: 639, category: "Laundry" },
+      { product: "Fay Eco Friendly Kitchen Roll Twin", brand: "Fay", qty: 1, unitPrice: 184, lineTotal: 184, category: "Household" },
+      { product: "Fay Toilet Roll White X10", brand: "Fay", qty: 1, unitPrice: 400, lineTotal: 400, category: "Household" },
+      { product: "Blueband Peanut Butter 400G", brand: "BlueBand", qty: 1, unitPrice: 300, lineTotal: 300, category: "Food" },
+      { product: "TENA SERVIETTES WHITE 200S", brand: "Tena", qty: 2, unitPrice: 178, lineTotal: 356, category: "Household" },
+      { product: "Pick N Peel White Grape Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 288, lineTotal: 288, category: "Beverages" },
+      { product: "Zesta Tomato Sauce 400g", brand: "Zesta", qty: 1, unitPrice: 105, lineTotal: 105, category: "Condiments" },
+      { product: "Farmer's Choice Danish Pork Hot Dogs 500g", brand: "Farmers Choice", qty: 1, unitPrice: 357, lineTotal: 357, category: "Meat & Protein" },
+      { product: "Supa Loaf Butter Toast Bread 600g", brand: "Supa Loaf", qty: 2, unitPrice: 97, lineTotal: 194, category: "Bakery" },
+      { product: "Pick N Peel Apple Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 280, lineTotal: 280, category: "Beverages" },
+      { product: "Dove Invigorating Ritual 750Ml", brand: "Dove", qty: 1, unitPrice: 1485, lineTotal: 1485, category: "Personal Care" },
+      { product: "Pride Mult-Liquid Detergent 1L", brand: "Pride", qty: 5, unitPrice: 239, lineTotal: 1195, category: "Cleaning" },
+      { product: "Vaseline Intensive Care Cocoa Radiant Lotion 400Ml", brand: "Vaseline", qty: 1, unitPrice: 400, lineTotal: 400, category: "Personal Care" },
+      { product: "VELVEX CLING FILM 30CMX300M", brand: "Velvex", qty: 1, unitPrice: 1150, lineTotal: 1150, category: "Household" },
+      { product: "BIC Megalighter Multi Utility Lighters Pack of 1", brand: "BIC", qty: 1, unitPrice: 400, lineTotal: 400, category: "Household" },
+      { product: "Pride Dishwashing Paste Lemon 800g", brand: "Pride", qty: 1, unitPrice: 397, lineTotal: 397, category: "Cleaning" },
+      { product: "Papilion Hand Wash Soap Bloom 500ml", brand: "Papilion", qty: 1, unitPrice: 220, lineTotal: 220, category: "Personal Care" },
+      { product: "Kensalt Table Salt 200g", brand: "Kensalt", qty: 2, unitPrice: 9, lineTotal: 18, category: "Cooking" },
+      { product: "Sensodyne White RepairProtect 75Ml", brand: "Sensodyne", qty: 1, unitPrice: 770, lineTotal: 770, category: "Personal Care" },
+      { product: "Supa Brite Magic Sponge 1 Piece", brand: "Supa Brite", qty: 2, unitPrice: 225, lineTotal: 450, category: "Cleaning" },
+      { product: "Pick N Peel Tropical Mix Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 288, lineTotal: 288, category: "Beverages" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 362, lineTotal: 362, category: "Beverages" },
+      { product: "Pick N Peel Mango Juice 1L", brand: "Pick N Peel", qty: 1, unitPrice: 288, lineTotal: 288, category: "Beverages" },
+      { product: "Zesta Strawberry Jam 500g", brand: "Zesta", qty: 1, unitPrice: 259, lineTotal: 259, category: "Food" },
+      { product: "WEETABIX OREOS CEREAL 320G", brand: "Weetabix", qty: 2, unitPrice: 1050, lineTotal: 2100, category: "Food" },
+      { product: "Mumias Sugar White 2Kg", brand: "Mumias", qty: 1, unitPrice: 347, lineTotal: 347, category: "Baking & Ingredients" },
+      { product: "Nivea Deep Espresso Roll On M50Ml", brand: "Nivea", qty: 1, unitPrice: 520, lineTotal: 520, category: "Personal Care" },
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 527, lineTotal: 527, category: "Eggs & Dairy" },
+      { product: "Sunrice Basmati Rice 2Kg", brand: "Sunrice", qty: 1, unitPrice: 732, lineTotal: 732, category: "Grains & Staples" },
+      { product: "Farmers Choice Back Bacon 400 gr", brand: "Farmers Choice", qty: 1, unitPrice: 835, lineTotal: 835, category: "Meat & Protein" },
+      { product: "Jik Bleach Colours 750Ml", brand: "Jik", qty: 2, unitPrice: 749, lineTotal: 1498, category: "Cleaning" },
+      { product: "Top Food Pilau Masala Grnd Jar 100G", brand: "Top Food", qty: 1, unitPrice: 295, lineTotal: 295, category: "Spices" },
+      { product: "Kleenit Swipe Kitchen Cloth Large 10 Pieces", brand: "Kleenit", qty: 1, unitPrice: 228, lineTotal: 228, category: "Cleaning" },
+      { product: "Pembe Maize Flour 2Kg", brand: "Pembe", qty: 1, unitPrice: 152, lineTotal: 152, category: "Grains & Staples" },
+      { product: "Ajab All Purpose Flour 2kg", brand: "Ajab", qty: 2, unitPrice: 166, lineTotal: 332, category: "Baking & Ingredients" },
+      { product: "Sokoni Steel Wool 20 gr x 5", brand: "Sokoni", qty: 1, unitPrice: 62, lineTotal: 62, category: "Cleaning" },
+      { product: "Tropical Heat Biryani Masala 45G", brand: "Tropical Heat", qty: 1, unitPrice: 140, lineTotal: 140, category: "Spices" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 1, unitPrice: 795, lineTotal: 795, category: "Dairy" },
+      { product: "Jik Bleach Regular 1.5L", brand: "Jik", qty: 1, unitPrice: 798, lineTotal: 798, category: "Cleaning" },
+      { product: "Festive Sliced Sub Rolls 350g", brand: "Festive", qty: 1, unitPrice: 139, lineTotal: 139, category: "Bakery" },
+      { product: "Mushroom Sliced Local 250G", brand: "Fresh", qty: 2, unitPrice: 369, lineTotal: 738, category: "Fresh Produce" },
+      { product: "Festive Deluxe Rolls 300g", brand: "Festive", qty: 1, unitPrice: 120, lineTotal: 120, category: "Bakery" },
+      { product: "Pembe Atta Mark 1 Wheat Flour 2Kg", brand: "Pembe", qty: 1, unitPrice: 175, lineTotal: 175, category: "Baking & Ingredients" },
+      { product: "TOSS WASHING POWDER MACHINE 1.5K", brand: "Toss", qty: 2, unitPrice: 740, lineTotal: 1480, category: "Laundry" },
+      { product: "Royco Fortified Chicken Cubes 4g x 40", brand: "Royco", qty: 1, unitPrice: 126, lineTotal: 126, category: "Condiments" },
+    ]
+  },
+  {
+    invoiceNo: "79911582",
+    date: "24-Oct-2025",
+    store: "Sarit Centre",
+    total: 30084,
+    items: [
+      { product: "Colgate Double Action Toothbrush 4 Pieces", brand: "Colgate", qty: 1, unitPrice: 300, lineTotal: 300, category: "Personal Care" },
+      { product: "Safisha Hand washing Liquid Soap Strawberry 400Ml", brand: "Safisha", qty: 3, unitPrice: 135, lineTotal: 405, category: "Personal Care" },
+      { product: "Tropical Heat Spices Chicken Masala 100G", brand: "Tropical Heat", qty: 2, unitPrice: 140, lineTotal: 280, category: "Spices" },
+      { product: "Colgate Dental Cream 140g", brand: "Colgate", qty: 2, unitPrice: 340, lineTotal: 680, category: "Personal Care" },
+      { product: "Amaize Maize Meal Flour 2Kg", brand: "Amaize", qty: 1, unitPrice: 188, lineTotal: 188, category: "Grains & Staples" },
+      { product: "Farmers Choice Pork Value Pack 1kg + Sandwich Ham", brand: "Farmers Choice", qty: 1, unitPrice: 1000, lineTotal: 1000, category: "Meat & Protein" },
+      { product: "Chain Two Dark Soy Sauce 150ml", brand: "Chain Two", qty: 1, unitPrice: 175, lineTotal: 175, category: "Condiments" },
+      { product: "Festive Deluxe Rolls 300g", brand: "Festive", qty: 1, unitPrice: 120, lineTotal: 120, category: "Bakery" },
+      { product: "Hanan Aluminium Foil 45Cmx90M", brand: "Hanan", qty: 1, unitPrice: 2290, lineTotal: 2290, category: "Household" },
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 525, lineTotal: 525, category: "Eggs & Dairy" },
+      { product: "Farmer's Choice Danish Pork Hot Dogs 500g", brand: "Farmers Choice", qty: 2, unitPrice: 375, lineTotal: 750, category: "Meat & Protein" },
+      { product: "Cadbury Drink Chocolate Powder 225g", brand: "Cadbury", qty: 1, unitPrice: 287, lineTotal: 287, category: "Beverages" },
+      { product: "Jik Bleach Regular 2.25L", brand: "Jik", qty: 1, unitPrice: 979, lineTotal: 979, category: "Cleaning" },
+      { product: "Heinz Mustard Sauce 245g", brand: "Heinz", qty: 1, unitPrice: 255, lineTotal: 255, category: "Condiments" },
+      { product: "Zesta Tomato Sauce 1Kg", brand: "Zesta", qty: 1, unitPrice: 135, lineTotal: 135, category: "Condiments" },
+      { product: "Bio Active Probiotic Yoghurt CucumberMint 350Ml", brand: "Bio", qty: 1, unitPrice: 159, lineTotal: 159, category: "Dairy" },
+      { product: "Farmer's Choice Sandwich Ham 200g", brand: "Farmers Choice", qty: 2, unitPrice: 313, lineTotal: 626, category: "Meat & Protein" },
+      { product: "Safisha Window Cleaner Citrus 500Ml", brand: "Safisha", qty: 1, unitPrice: 192, lineTotal: 192, category: "Cleaning" },
+      { product: "Dove Fresh Touch Shower Gel 500ml", brand: "Dove", qty: 1, unitPrice: 1115, lineTotal: 1115, category: "Personal Care" },
+      { product: "Farmers Choice Back Bacon 400 gr", brand: "Farmers Choice", qty: 1, unitPrice: 877, lineTotal: 877, category: "Meat & Protein" },
+      { product: "Borges Extra Virgin Olive Oil 750ml", brand: "Borges", qty: 1, unitPrice: 2575, lineTotal: 2575, category: "Cooking Oil" },
+      { product: "Downy Fabric Softener Lavender Calm Bottle 900Ml", brand: "Downy", qty: 1, unitPrice: 639, lineTotal: 639, category: "Laundry" },
+      { product: "Zesta Strawberry Jam 500g", brand: "Zesta", qty: 1, unitPrice: 207, lineTotal: 207, category: "Food" },
+      { product: "Tena Toilet Paper Rolls White 15 Count", brand: "Tena", qty: 1, unitPrice: 650, lineTotal: 650, category: "Household" },
+      { product: "Sensodyne Tooth Paste Fresh Mint 75Ml", brand: "Sensodyne", qty: 2, unitPrice: 350, lineTotal: 700, category: "Personal Care" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 2, unitPrice: 795, lineTotal: 1590, category: "Dairy" },
+      { product: "Velvex Premium Kitchen Roll Single", brand: "Velvex", qty: 2, unitPrice: 195, lineTotal: 390, category: "Household" },
+      { product: "Brookside Farm Fresh Whole Milk 3L", brand: "Brookside", qty: 2, unitPrice: 382, lineTotal: 764, category: "Dairy" },
+      { product: "Persil Machine Washing Powder 4.5Kg", brand: "Persil", qty: 1, unitPrice: 2799, lineTotal: 2799, category: "Laundry" },
+      { product: "Macuisine Just Mayonnaise 330g", brand: "Macuisine", qty: 1, unitPrice: 429, lineTotal: 429, category: "Condiments" },
+      { product: "Nuziwa Almond Milk Unsweetened 1L", brand: "Nuziwa", qty: 2, unitPrice: 480, lineTotal: 960, category: "Beverages" },
+      { product: "Tropical Heat Spices Dhana Jeera 100G", brand: "Tropical Heat", qty: 1, unitPrice: 200, lineTotal: 200, category: "Spices" },
+      { product: "Jik Bleach Colours 2.25L", brand: "Jik", qty: 1, unitPrice: 1699, lineTotal: 1699, category: "Cleaning" },
+      { product: "Sunrice Basmati Rice 2Kg", brand: "Sunrice", qty: 1, unitPrice: 732, lineTotal: 732, category: "Grains & Staples" },
+      { product: "Kenchic Smoked Chicken Sausages 1kg", brand: "Kenchic", qty: 1, unitPrice: 520, lineTotal: 520, category: "Meat & Protein" },
+      { product: "Lovin It Lemon Air Freshener 300ml", brand: "Lovin It", qty: 2, unitPrice: 295, lineTotal: 590, category: "Household" },
+      { product: "Ajab All Purpose Flour 2kg", brand: "Ajab", qty: 2, unitPrice: 171, lineTotal: 342, category: "Baking & Ingredients" },
+      { product: "Kericho Gold 100 Tea Bags 200G", brand: "Kericho Gold", qty: 1, unitPrice: 269, lineTotal: 269, category: "Beverages" },
+      { product: "Pride Dishwashing Paste Lemon 800g", brand: "Pride", qty: 1, unitPrice: 397, lineTotal: 397, category: "Cleaning" },
+      { product: "Tropical Heat Spices Rosemary Leaves 20G", brand: "Tropical Heat", qty: 1, unitPrice: 70, lineTotal: 70, category: "Spices" },
+      { product: "Farmers Choice Streaky Bacon 400G", brand: "Farmers Choice", qty: 1, unitPrice: 885, lineTotal: 885, category: "Meat & Protein" },
+      { product: "Supa Loaf Butter Toast Bread 400g", brand: "Supa Loaf", qty: 2, unitPrice: 64, lineTotal: 128, category: "Bakery" },
+      { product: "Mumias Sugar White 2Kg", brand: "Mumias", qty: 1, unitPrice: 349, lineTotal: 349, category: "Baking & Ingredients" },
+      { product: "Palaciego Pork Salami", brand: "Palaciego", qty: 0.3, unitPrice: 3349, lineTotal: 857, category: "Meat & Protein" },
+    ]
+  },
+  {
+    invoiceNo: "82656252",
+    date: "29-Dec-2025",
+    store: "Sarit Centre",
+    total: 10906,
+    items: [
+      { product: "Colgate Dental Cream 70g", brand: "Colgate", qty: 1, unitPrice: 180, lineTotal: 180, category: "Personal Care" },
+      { product: "Farmers Choice Collar Bacon 400G", brand: "Farmers Choice", qty: 2, unitPrice: 772, lineTotal: 1544, category: "Meat & Protein" },
+      { product: "Aberdare Parmesan Grated Cheese 80G", brand: "Aberdare", qty: 2, unitPrice: 360, lineTotal: 720, category: "Dairy" },
+      { product: "Harpic Power Plus Citrus Promo Pack1Lx2", brand: "Harpic", qty: 1, unitPrice: 1800, lineTotal: 1800, category: "Cleaning" },
+      { product: "Rosy Serviettes White", brand: "Rosy", qty: 2, unitPrice: 105, lineTotal: 210, category: "Household" },
+      { product: "Kentaste Coconut Milk 250ml", brand: "Kentaste", qty: 1, unitPrice: 219, lineTotal: 219, category: "Cooking" },
+      { product: "Velvex Premium Kitchen Roll Single", brand: "Velvex", qty: 2, unitPrice: 195, lineTotal: 390, category: "Household" },
+      { product: "Browns Mozzarella Cheese 200G", brand: "Browns", qty: 1, unitPrice: 515, lineTotal: 515, category: "Dairy" },
+      { product: "Glade Air Freshener Value Pack 3X300Ml", brand: "Glade", qty: 1, unitPrice: 950, lineTotal: 950, category: "Household" },
+      { product: "Happy Cow Grated Parmesan 100G", brand: "Happy Cow", qty: 1, unitPrice: 525, lineTotal: 525, category: "Dairy" },
+      { product: "Mortein Doom Aerosol All Insect Killer Twin 400Ml", brand: "Mortein", qty: 1, unitPrice: 2100, lineTotal: 2100, category: "Household" },
+      { product: "Downy Lavender Fabric Softener 900Ml", brand: "Downy", qty: 2, unitPrice: 549, lineTotal: 1098, category: "Laundry" },
+      { product: "Tena Toilet Paper Rolls White 15 Pack", brand: "Tena", qty: 1, unitPrice: 650, lineTotal: 650, category: "Household" },
+    ]
+  },
+  {
+    invoiceNo: "83332067",
+    date: "12-Jan-2026",
+    store: "Sarit Centre",
+    total: 11746,
+    items: [
+      { product: "Downy Fabric Softener Lavender Calm Bottle 900Ml", brand: "Downy", qty: 1, unitPrice: 798, lineTotal: 798, category: "Laundry" },
+      { product: "Del Monte Mango Juice 250Ml", brand: "Del Monte", qty: 2, unitPrice: 79, lineTotal: 158, category: "Beverages" },
+      { product: "Zesta Mixed Fruit Jam 500g", brand: "Zesta", qty: 1, unitPrice: 217, lineTotal: 217, category: "Food" },
+      { product: "Peptang Tomato Sauce 1Kg", brand: "Peptang", qty: 1, unitPrice: 169, lineTotal: 169, category: "Condiments" },
+      { product: "Sensodyne Complete Protection Toothpaste 75ml", brand: "Sensodyne", qty: 1, unitPrice: 750, lineTotal: 750, category: "Personal Care" },
+      { product: "Fruitville Mango Juice 250Ml", brand: "Fruitville", qty: 1, unitPrice: 69, lineTotal: 69, category: "Beverages" },
+      { product: "TOP FOOD SESAME SEEDS SIMSIM J 150G", brand: "Top Food", qty: 1, unitPrice: 225, lineTotal: 225, category: "Spices" },
+      { product: "Dove Intense Care Lotion 250Ml", brand: "Dove", qty: 2, unitPrice: 565, lineTotal: 1130, category: "Personal Care" },
+      { product: "Colgate Dental Cream 234g", brand: "Colgate", qty: 1, unitPrice: 450, lineTotal: 450, category: "Personal Care" },
+      { product: "Royco Black Pepper Ground Spice 50g", brand: "Royco", qty: 2, unitPrice: 175, lineTotal: 350, category: "Spices" },
+      { product: "Safisha All Purpose Sponge Clean 4's", brand: "Safisha", qty: 1, unitPrice: 220, lineTotal: 220, category: "Cleaning" },
+      { product: "VELVEX CLING FILM 30CMX300M", brand: "Velvex", qty: 1, unitPrice: 1150, lineTotal: 1150, category: "Household" },
+      { product: "Fruitville Orange Juice 1L", brand: "Fruitville", qty: 3, unitPrice: 299, lineTotal: 897, category: "Beverages" },
+      { product: "Pride Dishwashing Paste Lemon 800g", brand: "Pride", qty: 1, unitPrice: 397, lineTotal: 397, category: "Cleaning" },
+      { product: "Farmers Choice Streaky Bacon 400G", brand: "Farmers Choice", qty: 1, unitPrice: 880, lineTotal: 880, category: "Meat & Protein" },
+      { product: "Spring Onion Bunch", brand: "Fresh", qty: 2, unitPrice: 79, lineTotal: 158, category: "Fresh Produce" },
+      { product: "Jik Bleach Colours 2.25L", brand: "Jik", qty: 1, unitPrice: 1699, lineTotal: 1699, category: "Cleaning" },
+      { product: "Kenchic Smoked Chicken Sausages 1kg", brand: "Kenchic", qty: 2, unitPrice: 520, lineTotal: 1040, category: "Meat & Protein" },
+      { product: "Jik Bleach Regular 2.25L", brand: "Jik", qty: 1, unitPrice: 979, lineTotal: 979, category: "Cleaning" },
+    ]
+  },
+  {
+    invoiceNo: "85114583",
+    date: "18-Feb-2026",
+    store: "Sarit Centre",
+    total: 20036,
+    items: [
+      { product: "Persil Machine Washing Powder 1.5Kg", brand: "Persil", qty: 1, unitPrice: 809, lineTotal: 809, category: "Laundry" },
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 557, lineTotal: 557, category: "Eggs & Dairy" },
+      { product: "Farmers Choice Streaky Bacon 400g", brand: "Farmers Choice", qty: 1, unitPrice: 875, lineTotal: 875, category: "Meat & Protein" },
+      { product: "Safisha Window Cleaner Citrus 500Ml", brand: "Safisha", qty: 1, unitPrice: 192, lineTotal: 192, category: "Cleaning" },
+      { product: "Sunrice Basmati Rice 2Kg", brand: "Sunrice", qty: 1, unitPrice: 689, lineTotal: 689, category: "Grains & Staples" },
+      { product: "Pride Dishwashing Paste Lemon 800g", brand: "Pride", qty: 1, unitPrice: 397, lineTotal: 397, category: "Cleaning" },
+      { product: "Velvex Serviettes White Plain", brand: "Velvex", qty: 3, unitPrice: 140, lineTotal: 420, category: "Household" },
+      { product: "Rina Vegetable Cooking Oil 5L", brand: "Rina", qty: 1, unitPrice: 1325, lineTotal: 1325, category: "Cooking Oil" },
+      { product: "Dove Body Wash Invigorating 500Ml + Lotion", brand: "Dove", qty: 2, unitPrice: 1185, lineTotal: 2370, category: "Personal Care" },
+      { product: "Nuziwa Soya Orignal 1L", brand: "Nuziwa", qty: 1, unitPrice: 315, lineTotal: 315, category: "Beverages" },
+      { product: "Bio Whole Fresh Milk 2L", brand: "Bio", qty: 2, unitPrice: 328, lineTotal: 656, category: "Dairy" },
+      { product: "Ajab All Purpose Flour 2kg", brand: "Ajab", qty: 1, unitPrice: 166, lineTotal: 166, category: "Baking & Ingredients" },
+      { product: "Glade Air Freshener Value Pack 3X300Ml", brand: "Glade", qty: 1, unitPrice: 950, lineTotal: 950, category: "Household" },
+      { product: "Soko Flour Maize Meal 2Kg", brand: "Soko", qty: 1, unitPrice: 156, lineTotal: 156, category: "Grains & Staples" },
+      { product: "Tena Toilet Paper Rolls White 15 Pack", brand: "Tena", qty: 2, unitPrice: 650, lineTotal: 1300, category: "Household" },
+      { product: "Jik Bleach Regular 2.25L", brand: "Jik", qty: 1, unitPrice: 1000, lineTotal: 1000, category: "Cleaning" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 1, unitPrice: 789, lineTotal: 789, category: "Dairy" },
+      { product: "Tropical Heat Paprika 200g", brand: "Tropical Heat", qty: 1, unitPrice: 360, lineTotal: 360, category: "Spices" },
+      { product: "Harpic Twin Original 500Ml", brand: "Harpic", qty: 2, unitPrice: 900, lineTotal: 1800, category: "Cleaning" },
+      { product: "Heinz Mustard Sauce 245g", brand: "Heinz", qty: 1, unitPrice: 298, lineTotal: 298, category: "Condiments" },
+      { product: "Dove Cleansing Original Bar Soap 90G", brand: "Dove", qty: 2, unitPrice: 249, lineTotal: 498, category: "Personal Care" },
+      { product: "Downy Fabric Softener Feel Relaxed 280 ml", brand: "Downy", qty: 1, unitPrice: 198, lineTotal: 198, category: "Laundry" },
+      { product: "Sensodyne Complete Protection Toothpaste 75ml", brand: "Sensodyne", qty: 1, unitPrice: 750, lineTotal: 750, category: "Personal Care" },
+      { product: "Colgate Dental Cream 234g", brand: "Colgate", qty: 1, unitPrice: 450, lineTotal: 450, category: "Personal Care" },
+      { product: "Top Food Cumin Seeds 100g", brand: "Top Food", qty: 1, unitPrice: 390, lineTotal: 390, category: "Spices" },
+      { product: "Tropical Heat Garlic Powder 45G", brand: "Tropical Heat", qty: 1, unitPrice: 125, lineTotal: 125, category: "Spices" },
+      { product: "TOP FOOD SESAME SEEDS SIMSIM J 150G", brand: "Top Food", qty: 1, unitPrice: 225, lineTotal: 225, category: "Spices" },
+      { product: "Chain Two Dark Soy Sauce 150ml", brand: "Chain Two", qty: 1, unitPrice: 175, lineTotal: 175, category: "Condiments" },
+      { product: "Supa Loaf Butter Toast Bread 600g", brand: "Supa Loaf", qty: 1, unitPrice: 97, lineTotal: 97, category: "Bakery" },
+      { product: "Jik Bleach Colours 2.25L", brand: "Jik", qty: 1, unitPrice: 1699, lineTotal: 1699, category: "Cleaning" },
+    ]
+  },
+  {
+    invoiceNo: "85958621",
+    date: "06-Mar-2026",
+    store: "Sarit Centre",
+    total: 10356,
+    items: [
+      { product: "Isinya Eggs X30", brand: "Isinya", qty: 1, unitPrice: 557, lineTotal: 557, category: "Eggs & Dairy" },
+      { product: "Cadbury Drink Chocolate Powder 200g", brand: "Cadbury", qty: 1, unitPrice: 342, lineTotal: 342, category: "Beverages" },
+      { product: "Pick N Peel Orange Juice 1L", brand: "Pick N Peel", qty: 2, unitPrice: 349, lineTotal: 698, category: "Beverages" },
+      { product: "Sunrice Basmati Rice 2Kg", brand: "Sunrice", qty: 1, unitPrice: 678, lineTotal: 678, category: "Grains & Staples" },
+      { product: "Velvex Serviettes White Plain", brand: "Velvex", qty: 1, unitPrice: 140, lineTotal: 140, category: "Household" },
+      { product: "Royco Chicken Cubes 4g x 40", brand: "Royco", qty: 2, unitPrice: 145, lineTotal: 290, category: "Condiments" },
+      { product: "Energizer Batteries AA 8Pc", brand: "Energizer", qty: 1, unitPrice: 1250, lineTotal: 1250, category: "Household" },
+      { product: "Royco Beef Cube 4g x 28", brand: "Royco", qty: 3, unitPrice: 110, lineTotal: 330, category: "Condiments" },
+      { product: "Pembe Maize Flour 2Kg", brand: "Pembe", qty: 1, unitPrice: 156, lineTotal: 156, category: "Grains & Staples" },
+      { product: "PRIDE MULTILIQUID DETERGENT 5L", brand: "Pride", qty: 1, unitPrice: 821, lineTotal: 821, category: "Cleaning" },
+      { product: "Listerine Mouthwash Coolmint 250Ml", brand: "Listerine", qty: 1, unitPrice: 910, lineTotal: 910, category: "Personal Care" },
+      { product: "Pembe Maize Flour 1Kg", brand: "Pembe", qty: 1, unitPrice: 85, lineTotal: 85, category: "Grains & Staples" },
+      { product: "Kenylon Tomato Paste 450g", brand: "Kenylon", qty: 1, unitPrice: 235, lineTotal: 235, category: "Condiments" },
+      { product: "Mumias Sugar White 2Kg", brand: "Mumias", qty: 1, unitPrice: 310, lineTotal: 310, category: "Baking & Ingredients" },
+      { product: "Brookside Salted Butter Wrap 500G", brand: "Brookside", qty: 2, unitPrice: 631, lineTotal: 1262, category: "Dairy" },
+      { product: "Kifaru Match Boxes 45 Sticks x Pack of 10", brand: "Kifaru", qty: 4, unitPrice: 30, lineTotal: 120, category: "Household" },
+      { product: "Fay Toilet Roll White 10 Pack", brand: "Fay", qty: 2, unitPrice: 386, lineTotal: 772, category: "Household" },
+      { product: "Active Fresh Breath Spray Cool Mint Pump 25Ml", brand: "Active", qty: 2, unitPrice: 495, lineTotal: 990, category: "Personal Care" },
+      { product: "Sensodyne Tooth Paste Fresh Mint 40Ml", brand: "Sensodyne", qty: 2, unitPrice: 200, lineTotal: 400, category: "Personal Care" },
+    ]
+  },
+];
+
+export interface CarrefourBrandSummary {
+  brand: string;
+  totalSpend: number;
+  itemCount: number;
+  products: string[];
+  categories: string[];
+  receiptCount: number;
+}
+
+function aggregateCarrefourBrands(): CarrefourBrandSummary[] {
+  const brandMap = new Map<string, { spend: number; count: number; products: Set<string>; categories: Set<string>; receipts: Set<string> }>();
+
+  for (const receipt of CARREFOUR_RECEIPTS) {
+    for (const item of receipt.items) {
+      const key = item.brand;
+      if (key === "Generic" || key === "Fresh" || key === "Deli") continue;
+      if (!brandMap.has(key)) {
+        brandMap.set(key, { spend: 0, count: 0, products: new Set(), categories: new Set(), receipts: new Set() });
+      }
+      const entry = brandMap.get(key)!;
+      entry.spend += item.lineTotal;
+      entry.count += item.qty;
+      entry.products.add(item.product.split(/\s+/).slice(0, 4).join(" "));
+      entry.categories.add(item.category);
+      entry.receipts.add(receipt.invoiceNo);
+    }
+  }
+
+  return Array.from(brandMap.entries())
+    .map(([brand, data]) => ({
+      brand,
+      totalSpend: Math.round(data.spend),
+      itemCount: Math.round(data.count),
+      products: Array.from(data.products).slice(0, 6),
+      categories: Array.from(data.categories),
+      receiptCount: data.receipts.size,
+    }))
+    .sort((a, b) => b.totalSpend - a.totalSpend);
+}
+
+export const CARREFOUR_BRAND_SUMMARY = aggregateCarrefourBrands();
+
+export const CARREFOUR_SHOPPING_SUMMARY = {
+  totalReceipts: CARREFOUR_RECEIPTS.length,
+  totalSpend: Math.round(CARREFOUR_RECEIPTS.reduce((sum, r) => sum + r.total, 0)),
+  dateRange: {
+    from: "07-Apr-2025",
+    to: "06-Mar-2026",
+  },
+  totalLineItems: CARREFOUR_RECEIPTS.reduce((sum, r) => sum + r.items.length, 0),
+  stores: ["Westgate Mall", "Sarit Centre"],
+  avgOrderValue: Math.round(CARREFOUR_RECEIPTS.reduce((sum, r) => sum + r.total, 0) / CARREFOUR_RECEIPTS.length),
+};

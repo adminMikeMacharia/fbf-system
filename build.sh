@@ -3,6 +3,9 @@ set -e
 
 export VITE_API_BASE="${VITE_API_BASE:-https://macharia-os-main.replit.app}"
 
+echo "[fbf] Installing dependencies..."
+pnpm install --frozen-lockfile 2>/dev/null || pnpm install
+
 echo "[fbf] Building all portals for production..."
 echo "[fbf] VITE_API_BASE=$VITE_API_BASE"
 
