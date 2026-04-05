@@ -236,3 +236,7 @@ deploymentTarget = "autoscale"
 run = ["bash", "start.sh"]
 build = ["bash", "build.sh"]
 publicDir = "artifacts"
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 180000
