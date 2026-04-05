@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#101820;color:#f0f0ee;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;padding:24px;text-align:center}
+.logo{width:56px;height:56px;background:linear-gradient(135deg,#E8424D,#003153);border-radius:14px;display:inline-flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#fff}
+.logo.fbf{background:linear-gradient(135deg,#F97316,#7c2d12)}
+.logo.mos{background:linear-gradient(135deg,#D4A843,#1a3a1a);font-size:16px}
+h1{font-size:22px;font-weight:700;color:#fff}
+.sub{font-size:14px;color:#8a9aaa;max-width:360px;line-height:1.6}
+.spinner{width:36px;height:36px;border:3px solid rgba(232,66,77,0.2);border-top-color:#E8424D;border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status{font-size:13px;color:#8a9aaa;min-height:20px}
+.bar-wrap{width:280px;height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
+.bar{height:100%;background:#E8424D;border-radius:3px;width:0%;transition:width 0.6s ease}
+.manual{margin-top:16px;font-size:12px;color:#8a9aaa}
+.manual a{color:#E8424D;text-decoration:none;font-weight:600}
+.tick{font-size:36px;display:none}
+</style>
+</head>
+<body>
+<div class="logo" id="logo">P</div>
+<div>
+  <h1 id="title">Server is waking up...</h1>
+  <p class="sub" id="subtitle">This takes 15Ã¢ÂÂ30 seconds. The page will redirect automatically once ready.</p>
+</div>
+<div class="spinner" id="spinner"></div>
+<div class="tick" id="tick">Ã¢ÂÂ</div>
+<div class="bar-wrap"><div class="bar" id="bar"></div></div>
+<p class="status" id="status">Starting server...</p>
+<p class="manual" id="manual"></p>
+<script>
+var BASE = '';
+var p = new URLSearchParams(location.search);
+var dest = p.get('to') || '/founders-battlefield/';
+var brand = p.get('brand') || 'fbf';
+
+// Brand config
+var brands = {
+  ponea: { logo: 'P', cls: '', color: '#E8424D', name: 'Ponea OS' },
+  fbf:   { logo: 'FBF', cls: 'fbf', color: '#F97316', name: 'Founders Battlefield' },
+  mos:   { logo: 'MOS', cls: 'mos', color: '#D4A843', name: 'MachariaOS' }
+};
+var b = brands[brand] || brands.ponea;
+document.getElementById('logo').textContent = b.logo;
+document.getElementById('logo').className = 'logo ' + b.cls;
+document.getElementById('spinner').style.borderTopColor = b.color;
+document.getElementById('bar').style.background = b.color;
+document.getElementById('title').textContent = b.name + ' is waking up...';
+
+// Progress animation Ã¢ÂÂ 30 seconds to 95%
+var prog = 0;
+var started = Date.now();
+var WAKE_TIME = 30000; // 30s max wait
+
+var statusMsgs = [
+  'Starting server...',
+  'Loading modules...',
+  'Warming up services...',
+  'Almost ready...',
+  'Redirecting now...'
+];
+
+function updateProgress() {
+  var elapsed = Date.now() - started;
+  prog = Math.min(95, (elapsed / WAKE_TIME) * 100);
+  document.getElementById('bar').style.width = prog + '%';
+  var msgIdx = Math.floor((prog / 95) * (statusMsgs.length - 1));
+  document.getElementById('status').textContent = statusMsgs[Math.min(msgIdx, statusMsgs.length - 1)];
+}
+
+var progInterval = setInterval(updateProgress, 300);
+
+// Show manual link after 10 seconds as fallback
+setTimeout(function() {
+  document.getElementById('manual').innerHTML = 'Taking too long? <a href="' + BASE + dest + '" id="directLink">Click here to try directly</a>';
+}, 10000);
+
+// The actual wake mechanism: use an image request (no CORS issues, detects actual server response)
+function pingServer(callback) {
+  var img = new Image();
+  var done = false;
+  img.onload = function() { if (!done) { done = true; callback(true); } };
+  img.onerror = function() {
+    // 404 or any HTTP response = server is awake (even errors mean it responded)
+    if (!done) { done = true; callback(true); }
+  };
+  // Cache-bust + use favicon which most Express servers serve or 404 quickly
+  img.src = BASE + '/favicon.ico?t=' + Date.now();
+  // Timeout Ã¢ÂÂ if no response in 4s, server still sleeping
+  setTimeout(function() { if (!done) { done = true; callback(false); } }, 4000);
+}
+
+var attempts = 0;
+var maxAttempts = 10;
+
+function tryWake() {
+  attempts++;
+  pingServer(function(awake) {
+    if (awake) {
+      // Server responded Ã¢ÂÂ redirect
+      clearInterval(progInterval);
+      document.getElementById('bar').style.width = '100%';
+      document.getElementById('status').textContent = 'Ready! Redirecting...';
+      document.getElementById('title').textContent = b.name + ' is ready!';
+      document.getElementById('subtitle').textContent = 'You will be redirected in 1 second.';
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('tick').style.display = 'block';
+      setTimeout(function() { location.href = BASE + dest; }, 1000);
+    } else if (attempts < maxAttempts) {
+      // Still sleeping, try again in 3s
+      setTimeout(tryWake, 3000);
+    } else {
+      // Gave up Ã¢ÂÂ redirect anyway, user will see the Replit screen but it should be loading
+      clearInterval(progInterval);
+      document.getElementById('status').textContent = 'Redirecting... (may need a moment)';
+      document.getElementById('bar').style.width = '100%';
+      setTimeout(function() { location.href = BASE + dest; }, 500);
+    }
+  });
+}
+
+// First ping after 2 seconds
+setTimeout(tryWake, 2000);
+</script>
+</body>
+</html>
