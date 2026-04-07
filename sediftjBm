@@ -235,7 +235,6 @@ channel = "stable-25_05"
 deploymentTarget = "autoscale"
 run = ["bash", "start.sh"]
 build = ["bash", "build.sh"]
-publicDir = "public"
 
 [postMerge]
 path = "scripts/post-merge.sh"
