@@ -1,8 +1,22 @@
-import { drizzle } from "drizzle-orm/postgres-js";
+import { drizzle, type PostgresJsDatabase } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
-const DATABASE_URL = process.env.DATABASE_URL;
-if (!DATABASE_URL) throw new Error("[fbf-api] DATABASE_URL environment variable is required.");
+let _db: PostgresJsDatabase | null = null;
 
-const client = postgres(DATABASE_URL, { max: 10 });
-export const db = drizzle(client);
+export function getDb(): PostgresJsDatabase {
+  if (!_db) {
+    const url = process.env.DATABASE_URL;
+    if (!url) {
+      throw new Error("[fbf-api] DATABASE_URL is not set. Database features are unavailable.");
+    }
+    const client = postgres(url, { max: 10 });
+    _db = drizzle(client);
+  }
+  return _db;
+}
+
+export const db = new Proxy({} as PostgresJsDatabase, {
+  get(_target, prop) {
+    return (getDb() as any)[prop];
+  },
+});
