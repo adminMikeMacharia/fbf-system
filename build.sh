@@ -20,10 +20,15 @@ wait
 echo "[fbf] All portals built successfully."
 
 echo "[fbf] Moving build outputs to dist/serve (avoid static-only artifact mode)..."
+BUILD_COMMIT=$(git rev-parse HEAD 2>/dev/null || echo "unknown")
 for portal in founders-brand-hub founders-kitchen founders-gaming fvc sponsorship-hub chapters-ledgers; do
   if [ -d "artifacts/$portal/dist/public" ]; then
     rm -rf "artifacts/$portal/dist/serve"
     mv "artifacts/$portal/dist/public" "artifacts/$portal/dist/serve"
   fi
+  if [ -d "artifacts/$portal/dist/serve" ]; then
+    echo "$BUILD_COMMIT" > "artifacts/$portal/dist/serve/.build-commit"
+  fi
 done
-echo "[fbf] Build complete."
+echo "$BUILD_COMMIT" > .last-build-commit
+echo "[fbf] Build complete (commit: ${BUILD_COMMIT:0:7})."

@@ -30,8 +30,9 @@ A pnpm monorepo with 6 React/Vite frontend portals + 1 Express API server, conne
 
 ## Shared Packages
 - `lib/api-client-react` — API client hooks (stub for @workspace/api-client-react)
-- `lib/kola-data` — Kola venture case study data (stub for @workspace/kola-data)
+- `lib/kola-data` — Kolacopia 3.0 event narrative data (single source of truth). Contains real event data: KOLA_COMPANY, KOLA_TIMELINE, KOLA_FINANCIALS, KOLA_TEAM, KOLA_GOVERNANCE, KOLA_LESSONS, LEO_REFLECTION, KOLA_LOAN_AGREEMENT, KOLA_BANK_HISTORY. Used by FVC and Founders Kitchen.
 - `lib/shopping-data` — Real household consumption data parsed from 15 Carrefour receipts (Apr 2025–Mar 2026). Exports `TOP_BRANDS` (79 brands sorted by spend) and `SHOPPING_SUMMARY` with `{ totalSpend, dateRange, totalLineItems, uniqueProducts }`. Powers the Brand Engagement Pipeline on the FK Partnerships page.
+- `lib/password-gateway` — Shared PasswordGateway component used by all portals
 
 ## Canonical Data Modules (single source of truth for seed + UI)
 - `artifacts/chapters-ledgers/src/data/columns.ts` — `foundersArenaColumns` (36 Business Daily columns)
@@ -93,6 +94,10 @@ A pnpm monorepo with 6 React/Vite frontend portals + 1 Express API server, conne
 - Build: `bash build.sh`
 - Run: `bash start.sh`
 - Replit auto-detects 6 static artifacts and serves them
+- Post-merge hook (`scripts/post-merge.sh`) installs deps and reminds to redeploy
+- `scripts/redeploy-check.sh` compares deployed commit with HEAD
+- **Important**: Post-merge does NOT auto-redeploy. Manual redeploy required after task merges.
+- See `DEPLOYMENT_AUDIT.md` for full audit of deployment state and code duplication
 
 ## Secrets
 - OPENAI_API_KEY

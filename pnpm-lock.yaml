@@ -630,10 +630,6 @@ importers:
         specifier: ^3.3.5
         version: 3.9.0(react@19.1.0)
 
-  artifacts/kola-data: {}
-
-  artifacts/shopping-data: {}
-
   artifacts/sponsorship-hub:
     dependencies:
       '@workspace/password-gateway':
