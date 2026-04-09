@@ -1,5 +1,6 @@
 import express from "express";
 import path from "node:path";
+import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -23,9 +24,14 @@ const portals = [
   "chapters-ledgers",
 ];
 
+function getDistDir(portal) {
+  const serve = path.join(__dirname, "artifacts", portal, "dist", "serve");
+  if (fs.existsSync(serve)) return serve;
+  return path.join(__dirname, "artifacts", portal, "dist", "public");
+}
+
 for (const portal of portals) {
-  const distDir = path.join(__dirname, "artifacts", portal, "dist", "public");
-  app.use(`/${portal}`, express.static(distDir));
+  app.use(`/${portal}`, express.static(getDistDir(portal)));
 }
 
 const battlefieldDir = path.join(__dirname, "artifacts", "founders-battlefield");
@@ -38,8 +44,7 @@ app.use((req, res, next) => {
   const match = req.path.match(/^\/(founders-brand-hub|founders-kitchen|founders-gaming|fvc|sponsorship-hub|chapters-ledgers)(\/.*)?$/);
   if (match) {
     const portal = match[1];
-    const distDir = path.join(__dirname, "artifacts", portal, "dist", "public");
-    return res.sendFile(path.join(distDir, "index.html"));
+    return res.sendFile(path.join(getDistDir(portal), "index.html"));
   }
   next();
 });

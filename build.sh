@@ -18,3 +18,12 @@ PORT=19205 BASE_PATH=/chapters-ledgers/ pnpm --filter @workspace/chapters-ledger
 
 wait
 echo "[fbf] All portals built successfully."
+
+echo "[fbf] Moving build outputs to dist/serve (avoid static-only artifact mode)..."
+for portal in founders-brand-hub founders-kitchen founders-gaming fvc sponsorship-hub chapters-ledgers; do
+  if [ -d "artifacts/$portal/dist/public" ]; then
+    rm -rf "artifacts/$portal/dist/serve"
+    mv "artifacts/$portal/dist/public" "artifacts/$portal/dist/serve"
+  fi
+done
+echo "[fbf] Build complete."
